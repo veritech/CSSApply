@@ -16,12 +16,9 @@ build/*
 # osx noise
 .DS_Store
 profile
-fbchat.xcodeproj/project.xcworkspace/xcuserdata/*
-fbchat.xcodeproj/xcuserdata/*
+*.xcodeproj/project.xcworkspace/xcuserdata/*
+*.xcodeproj/xcuserdata/*
 
 # Custom
 
 *.mode2v3
-/vendors/Google Analytics SDK/Changelog.txt
-/vendors/Google Analytics SDK/ReadMe.txt
-/fbchat.xcodeproj/xcshareddata/
