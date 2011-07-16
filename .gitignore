@@ -1,0 +1,27 @@
+# xcode noise
+*.mode1v3
+*.pbxuser
+*.perspective 
+*.perspectivev3
+*.pyc 
+*~.nib/
+build/*
+
+# Textmate - if you build your xcode projects with it
+*.tm_build_errors
+
+# old skool
+.svn
+
+# osx noise
+.DS_Store
+profile
+fbchat.xcodeproj/project.xcworkspace/xcuserdata/*
+fbchat.xcodeproj/xcuserdata/*
+
+# Custom
+
+*.mode2v3
+/vendors/Google Analytics SDK/Changelog.txt
+/vendors/Google Analytics SDK/ReadMe.txt
+/fbchat.xcodeproj/xcshareddata/
