@@ -9,9 +9,11 @@
 #import "CSSSampleViewController.h"
 
 @implementation CSSSampleViewController
+@synthesize sampleView;
 
 - (void)dealloc
 {
+	[sampleView release];
     [super dealloc];
 }
 
@@ -25,16 +27,19 @@
 
 #pragma mark - View lifecycle
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+	[[self sampleView] setStyle:@"*{background-color:}"];
 }
-*/
+
 
 - (void)viewDidUnload
 {
+	[self setSampleView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

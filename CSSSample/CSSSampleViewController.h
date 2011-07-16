@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIView+CSS.h"
 
 @interface CSSSampleViewController : UIViewController {
     
+	UILabel *sampleView;
 }
+@property (nonatomic, retain) IBOutlet UILabel *sampleView;
 
 @end
