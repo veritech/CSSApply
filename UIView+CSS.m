@@ -7,25 +7,31 @@
 //
 
 #import "UIVIew+CSS.h"
+#import <objc/runtime.h>
 
+#define kUIViewIDNameKey "UIViewCSSIDNameKey" 
+#define kUIViewClassNameKey "UIViewCSSClassNameKey"
 
 @implementation UIView (CSS)
 
+@dynamic idName;
+@dynamic className;
+
 #pragma mark - ID & Class names
--(void) setIDName:(NSString*) anIDName{
-	
+-(void) setIdName:(NSString*) anIDName{
+	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
 -(NSString*) idName{
-	return nil;
+	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
 }
 
 -(void) setClassName:(NSString*) aClassName{
-	
+	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 -(NSString*) className{
-	return nil;
+	return objc_getAssociatedObject(self, kUIViewClassNameKey);
 }
 
 #pragma mark - Style loading

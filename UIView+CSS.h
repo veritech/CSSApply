@@ -11,15 +11,12 @@
 
 @interface UIView (CSS)
 
+@property (nonatomic,copy) NSString *idName;
+@property (nonatomic,copy) NSString *className;
+//@property (nonatomic,copy) NSString *style;
+
 //CSS properties
--(void) setIdName:(NSString*) anIdName;
--(NSString*) idName;
-
--(void) setClassName:(NSString*) aClassName;
--(NSString*) className;
-
-//Style loading
--(void) setStyle:(NSString*) aStyle;
+-(void) setStyle:(NSString*) aString;
 
 -(void) setStyleWithPath:(NSString*) aFilePath;
 
