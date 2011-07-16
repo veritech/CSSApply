@@ -14,8 +14,8 @@
 
 @implementation UIView (CSS)
 
-@dynamic idName;
-@dynamic classNames;
+@dynamic CSSIdName;
+@dynamic CSSClassNames;
 
 #pragma mark - ID & Class names
 
@@ -23,7 +23,7 @@
  *	Set class names
  *	@param a NSSet
  */
--(void) setClassNames:(NSSet*) aClassName{
+-(void) setCSSClassNames:(NSSet*) aClassName{
 	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
@@ -32,7 +32,7 @@
  *
  *	@return NSSet
  */
--(NSSet*) classNames{
+-(NSSet*) CSSClassNames{
 	return objc_getAssociatedObject(self, kUIViewClassNameKey);
 }
 
@@ -41,28 +41,28 @@
  *
  *	@param a class name to add
  */
--(void) addClassName:(NSString*) aName{
+-(void) addCSSClassName:(NSString*) aName{
 	
 	NSSet *temp;
 	
-	temp  = [[NSSet setWithObject:aName] setByAddingObjectsFromSet:[self classNames]];
+	temp  = [[NSSet setWithObject:aName] setByAddingObjectsFromSet:[self CSSClassNames]];
 	
-	[self setClassNames:temp];
+	[self setCSSClassNames:temp];
 }
 
 /**
  *	Remove class name
  *	@param a Class name to remove
  */
--(void) removeClassName:(NSString*) aName{
+-(void) removeCSSClassName:(NSString*) aName{
 	
 	NSMutableSet *temp;
 	
-	temp = [[self classNames] mutableCopy];
+	temp = [[self CSSClassNames] mutableCopy];
 	
 	[temp removeObject:aName];
 	
-	[self setClassNames:[[temp copy] autorelease]];
+	[self setCSSClassNames:[[temp copy] autorelease]];
 	
 	[temp release];
 	
@@ -72,7 +72,7 @@
  *	set the view's id
  *	@param an id name
  */
--(void) setIdName:(NSString*) anIDName{
+-(void) setCSSIdName:(NSString*) anIDName{
 	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
@@ -80,7 +80,7 @@
  *	Get the view's id name
  *	@return an id name
  */
--(NSString*) idName{
+-(NSString*) CSSIdName{
 	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
 }
 
@@ -90,7 +90,7 @@
  *	
  *	@param aStyle string
  */
--(void) setStyle:(NSString*) aStyle{
+-(void) setCSSStyle:(NSString*) aStyle{
 	NSLog(@"Style \r\n%@",aStyle);
 }
 
@@ -98,7 +98,7 @@
  *	Load a style from a file
  *	@param The path to a CSS file
  */
--(void) setStyleWithPath:(NSString*) aFilePath{
+-(void) setCSSStyleWithPath:(NSString*) aFilePath{
 	
 	NSError		*error = nil;
 	NSString	*str;
@@ -108,7 +108,7 @@
 									   error:&error];
 	
 	if( str && !error ){
-		[self setStyle:str];
+		[self setCSSStyle:str];
 	}
 	else{
 		NSLog(@"setStyleWithPath %@", error);
@@ -120,7 +120,7 @@
  *	Set a style from a URL
  *	@param a URL to load a style from
  */
--(void) setStyleWithURL:(NSURL*) aURL{
+-(void) setCSSStyleWithURL:(NSURL*) aURL{
 	
 	//NSURL *
 	
