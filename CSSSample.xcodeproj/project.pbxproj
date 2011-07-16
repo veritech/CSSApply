@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
+		AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
+		AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
+		AB50CF9313D22017001113D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB50CF9113D22017001113D0 /* InfoPlist.strings */; };
+		AB50CF9613D22017001113D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CF9513D22017001113D0 /* main.m */; };
+		AB50CF9913D22017001113D0 /* CSSSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CF9813D22017001113D0 /* CSSSampleAppDelegate.m */; };
+		AB50CF9C13D22017001113D0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB50CF9A13D22017001113D0 /* MainWindow.xib */; };
+		AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CF9E13D22017001113D0 /* CSSSampleViewController.m */; };
+		AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFA013D22017001113D0 /* CSSSampleViewController.xib */; };
+		AB50CFA913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
+		AB50CFAA13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
+		AB50CFAB13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
+		AB50CFB313D22017001113D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFB113D22017001113D0 /* InfoPlist.strings */; };
+		AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFB513D22017001113D0 /* CSSSampleTests.h */; };
+		AB50CFB813D22017001113D0 /* CSSSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CFB713D22017001113D0 /* CSSSampleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB50CFAC13D22017001113D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB50CF7B13D22017001113D0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB50CF8313D22017001113D0;
+			remoteInfo = CSSSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AB50CF8413D22017001113D0 /* CSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB50CF8813D22017001113D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AB50CF8A13D22017001113D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB50CF8C13D22017001113D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AB50CF9013D22017001113D0 /* CSSSample-Info.plist */ = {isa = PBXFileReference; path = "CSSSample-Info.plist"; sourceTree = "<group>"; };
+		AB50CF9213D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB50CF9413D22017001113D0 /* CSSSample-Prefix.pch */ = {isa = PBXFileReference; path = "CSSSample-Prefix.pch"; sourceTree = "<group>"; };
+		AB50CF9513D22017001113D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB50CF9713D22017001113D0 /* CSSSampleAppDelegate.h */ = {isa = PBXFileReference; path = CSSSampleAppDelegate.h; sourceTree = "<group>"; };
+		AB50CF9813D22017001113D0 /* CSSSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleAppDelegate.m; sourceTree = "<group>"; };
+		AB50CF9B13D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		AB50CF9D13D22017001113D0 /* CSSSampleViewController.h */ = {isa = PBXFileReference; path = CSSSampleViewController.h; sourceTree = "<group>"; };
+		AB50CF9E13D22017001113D0 /* CSSSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleViewController.m; sourceTree = "<group>"; };
+		AB50CFA113D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CSSSampleViewController.xib; sourceTree = "<group>"; };
+		AB50CFA813D22017001113D0 /* CSSSampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSSSampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB50CFB013D22017001113D0 /* CSSSampleTests-Info.plist */ = {isa = PBXFileReference; path = "CSSSampleTests-Info.plist"; sourceTree = "<group>"; };
+		AB50CFB213D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB50CFB413D22017001113D0 /* CSSSampleTests-Prefix.pch */ = {isa = PBXFileReference; path = "CSSSampleTests-Prefix.pch"; sourceTree = "<group>"; };
+		AB50CFB513D22017001113D0 /* CSSSampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSampleTests.h; sourceTree = "<group>"; };
+		AB50CFB713D22017001113D0 /* CSSSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB50CF8113D22017001113D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */,
+				AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */,
+				AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB50CFA413D22017001113D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CFA913D22017001113D0 /* UIKit.framework in Frameworks */,
+				AB50CFAA13D22017001113D0 /* Foundation.framework in Frameworks */,
+				AB50CFAB13D22017001113D0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB50CF7913D22017001113D0 = {
+			isa = PBXGroup;
+			children = (
+				AB50CF8E13D22017001113D0 /* CSSSample */,
+				AB50CFAE13D22017001113D0 /* CSSSampleTests */,
+				AB50CF8713D22017001113D0 /* Frameworks */,
+				AB50CF8513D22017001113D0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB50CF8513D22017001113D0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CF8413D22017001113D0 /* CSSSample.app */,
+				AB50CFA813D22017001113D0 /* CSSSampleTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB50CF8713D22017001113D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CF8813D22017001113D0 /* UIKit.framework */,
+				AB50CF8A13D22017001113D0 /* Foundation.framework */,
+				AB50CF8C13D22017001113D0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB50CF8E13D22017001113D0 /* CSSSample */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CF9713D22017001113D0 /* CSSSampleAppDelegate.h */,
+				AB50CF9813D22017001113D0 /* CSSSampleAppDelegate.m */,
+				AB50CF9A13D22017001113D0 /* MainWindow.xib */,
+				AB50CF9D13D22017001113D0 /* CSSSampleViewController.h */,
+				AB50CF9E13D22017001113D0 /* CSSSampleViewController.m */,
+				AB50CFA013D22017001113D0 /* CSSSampleViewController.xib */,
+				AB50CF8F13D22017001113D0 /* Supporting Files */,
+			);
+			path = CSSSample;
+			sourceTree = "<group>";
+		};
+		AB50CF8F13D22017001113D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CF9013D22017001113D0 /* CSSSample-Info.plist */,
+				AB50CF9113D22017001113D0 /* InfoPlist.strings */,
+				AB50CF9413D22017001113D0 /* CSSSample-Prefix.pch */,
+				AB50CF9513D22017001113D0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB50CFAE13D22017001113D0 /* CSSSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CFB513D22017001113D0 /* CSSSampleTests.h */,
+				AB50CFB713D22017001113D0 /* CSSSampleTests.m */,
+				AB50CFAF13D22017001113D0 /* Supporting Files */,
+			);
+			path = CSSSampleTests;
+			sourceTree = "<group>";
+		};
+		AB50CFAF13D22017001113D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB50CFB013D22017001113D0 /* CSSSampleTests-Info.plist */,
+				AB50CFB113D22017001113D0 /* InfoPlist.strings */,
+				AB50CFB413D22017001113D0 /* CSSSampleTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB50CF8313D22017001113D0 /* CSSSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB50CFBB13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSample" */;
+			buildPhases = (
+				AB50CF8013D22017001113D0 /* Sources */,
+				AB50CF8113D22017001113D0 /* Frameworks */,
+				AB50CF8213D22017001113D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSSSample;
+			productName = CSSSample;
+			productReference = AB50CF8413D22017001113D0 /* CSSSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AB50CFA713D22017001113D0 /* CSSSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB50CFBE13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSampleTests" */;
+			buildPhases = (
+				AB50CFA313D22017001113D0 /* Sources */,
+				AB50CFA413D22017001113D0 /* Frameworks */,
+				AB50CFA513D22017001113D0 /* Resources */,
+				AB50CFA613D22017001113D0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB50CFAD13D22017001113D0 /* PBXTargetDependency */,
+			);
+			name = CSSSampleTests;
+			productName = CSSSampleTests;
+			productReference = AB50CFA813D22017001113D0 /* CSSSampleTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB50CF7B13D22017001113D0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Float:Right Ltd";
+			};
+			buildConfigurationList = AB50CF7E13D22017001113D0 /* Build configuration list for PBXProject "CSSSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB50CF7913D22017001113D0;
+			productRefGroup = AB50CF8513D22017001113D0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB50CF8313D22017001113D0 /* CSSSample */,
+				AB50CFA713D22017001113D0 /* CSSSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB50CF8213D22017001113D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CF9313D22017001113D0 /* InfoPlist.strings in Resources */,
+				AB50CF9C13D22017001113D0 /* MainWindow.xib in Resources */,
+				AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB50CFA513D22017001113D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CFB313D22017001113D0 /* InfoPlist.strings in Resources */,
+				AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB50CFA613D22017001113D0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB50CF8013D22017001113D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CF9613D22017001113D0 /* main.m in Sources */,
+				AB50CF9913D22017001113D0 /* CSSSampleAppDelegate.m in Sources */,
+				AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB50CFA313D22017001113D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB50CFB813D22017001113D0 /* CSSSampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB50CFAD13D22017001113D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB50CF8313D22017001113D0 /* CSSSample */;
+			targetProxy = AB50CFAC13D22017001113D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AB50CF9113D22017001113D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB50CF9213D22017001113D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AB50CF9A13D22017001113D0 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB50CF9B13D22017001113D0 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		AB50CFA013D22017001113D0 /* CSSSampleViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB50CFA113D22017001113D0 /* en */,
+			);
+			name = CSSSampleViewController.xib;
+			sourceTree = "<group>";
+		};
+		AB50CFB113D22017001113D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB50CFB213D22017001113D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB50CFB913D22017001113D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AB50CFBA13D22017001113D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		AB50CFBC13D22017001113D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
+				INFOPLIST_FILE = "CSSSample/CSSSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AB50CFBD13D22017001113D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
+				INFOPLIST_FILE = "CSSSample/CSSSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AB50CFBF13D22017001113D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSSSample.app/CSSSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSSSampleTests/CSSSampleTests-Prefix.pch";
+				INFOPLIST_FILE = "CSSSampleTests/CSSSampleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		AB50CFC013D22017001113D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSSSample.app/CSSSample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CSSSampleTests/CSSSampleTests-Prefix.pch";
+				INFOPLIST_FILE = "CSSSampleTests/CSSSampleTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB50CF7E13D22017001113D0 /* Build configuration list for PBXProject "CSSSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB50CFB913D22017001113D0 /* Debug */,
+				AB50CFBA13D22017001113D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB50CFBB13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB50CFBC13D22017001113D0 /* Debug */,
+				AB50CFBD13D22017001113D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AB50CFBE13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB50CFBF13D22017001113D0 /* Debug */,
+				AB50CFC013D22017001113D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB50CF7B13D22017001113D0 /* Project object */;
+}
