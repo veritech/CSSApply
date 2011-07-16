@@ -68,10 +68,18 @@
 	
 }
 
+/**
+ *	set the view's id
+ *	@param an id name
+ */
 -(void) setIdName:(NSString*) anIDName{
 	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
+/**
+ *	Get the view's id name
+ *	@return an id name
+ */
 -(NSString*) idName{
 	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
 }
