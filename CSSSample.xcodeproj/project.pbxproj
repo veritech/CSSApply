@@ -68,8 +68,8 @@
 		AB588FC413D243FE00EC6441 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		AB588FC713D243FE00EC6441 /* TestsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsAppDelegate.h; sourceTree = "<group>"; };
 		AB588FC813D243FE00EC6441 /* TestsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestsAppDelegate.m; sourceTree = "<group>"; };
-		AB588FD313D245A700EC6441 /* CSSObjectCategoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSObjectCategoryTest.h; path = UnitTests/CSSObjectCategoryTest.h; sourceTree = SOURCE_ROOT; };
-		AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSObjectCategoryTest.m; path = UnitTests/CSSObjectCategoryTest.m; sourceTree = SOURCE_ROOT; };
+		AB588FD313D245A700EC6441 /* CSSObjectCategoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSObjectCategoryTest.h; path = Tests/CSSObjectCategoryTest.h; sourceTree = SOURCE_ROOT; };
+		AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSObjectCategoryTest.m; path = Tests/CSSObjectCategoryTest.m; sourceTree = SOURCE_ROOT; };
 		AB588FD713D24DB500EC6441 /* CSSViewSelectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSViewSelectorTest.h; sourceTree = "<group>"; };
 		AB588FD813D24DB500EC6441 /* CSSViewSelectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSViewSelectorTest.m; sourceTree = "<group>"; };
 		AB5B475013D2272B00FB2A74 /* UIView+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSS.h"; sourceTree = "<group>"; };
@@ -551,6 +551,7 @@
 				AB588FCF13D243FE00EC6441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
