@@ -1,0 +1,3 @@
+[submodule "vendors/GHUnit"]
+	path = vendors/GHUnit
+	url = https://github.com/gabriel/gh-unit.git
