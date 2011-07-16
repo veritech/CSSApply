@@ -15,23 +15,65 @@
 @implementation UIView (CSS)
 
 @dynamic idName;
-@dynamic className;
+@dynamic classNames;
 
 #pragma mark - ID & Class names
+
+/**
+ *	Set class names
+ *	@param a NSSet
+ */
+-(void) setClassNames:(NSSet*) aClassName{
+	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+/**
+ *	Class names
+ *
+ *	@return NSSet
+ */
+-(NSSet*) classNames{
+	return objc_getAssociatedObject(self, kUIViewClassNameKey);
+}
+
+/**
+ *	Add a class name
+ *
+ *	@param a class name to add
+ */
+-(void) addClassName:(NSString*) aName{
+	
+	NSSet *temp;
+	
+	temp  = [[NSSet setWithObject:aName] setByAddingObjectsFromSet:[self classNames]];
+	
+	[self setClassNames:temp];
+}
+
+/**
+ *	Remove class name
+ *	@param a Class name to remove
+ */
+-(void) removeClassName:(NSString*) aName{
+	
+	NSMutableSet *temp;
+	
+	temp = [[self classNames] mutableCopy];
+	
+	[temp removeObject:aName];
+	
+	[self setClassNames:[[temp copy] autorelease]];
+	
+	[temp release];
+	
+}
+
 -(void) setIdName:(NSString*) anIDName{
 	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
 -(NSString*) idName{
 	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
-}
-
--(void) setClassName:(NSString*) aClassName{
-	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
--(NSString*) className{
-	return objc_getAssociatedObject(self, kUIViewClassNameKey);
 }
 
 #pragma mark - Style loading
@@ -41,7 +83,7 @@
  *	@param aStyle string
  */
 -(void) setStyle:(NSString*) aStyle{
-	NSLog(@"Style %@",aStyle);
+	NSLog(@"Style \r\n%@",aStyle);
 }
 
 /**
