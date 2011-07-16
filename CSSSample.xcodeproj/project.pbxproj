@@ -11,6 +11,7 @@
 		1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CE13D23508007C87FE /* CSSTreeManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
 		1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */; };
+		1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */; };
 		AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
 		AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
 		AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
@@ -49,6 +50,8 @@
 		1DEE03D413D23591007C87FE /* CSSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapper.h; sourceTree = "<group>"; };
 		1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPlistMapper.h; sourceTree = "<group>"; };
 		1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPlistMapper.m; sourceTree = "<group>"; };
+		1DEE03D913D238FE007C87FE /* CSSDOMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSDOMManager.h; sourceTree = "<group>"; };
+		1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSDOMManager.m; sourceTree = "<group>"; };
 		AB50CF8413D22017001113D0 /* CSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50CF8813D22017001113D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB50CF8A13D22017001113D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +118,8 @@
 				1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */,
 				1DEE03CD13D23508007C87FE /* CSSTreeManager.h */,
 				1DEE03CE13D23508007C87FE /* CSSTreeManager.m */,
+				1DEE03D913D238FE007C87FE /* CSSDOMManager.h */,
+				1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */,
 			);
 			name = managers;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */,
 				1DEE03D213D23514007C87FE /* CSSParser.m in Sources */,
 				1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */,
+				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

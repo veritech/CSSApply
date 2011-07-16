@@ -1,5 +1,5 @@
 //
-//  CSSTreeManager.h
+//  CSSDOMManager.h
 //  CSSSample
 //
 //  Created by Sam Stewart on 7/16/11.
@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CSSMapper.h"
 
-@interface CSSTreeManager : NSObject {
-    id <CSSMapper> mapper;
+
+@interface CSSDOMManager : NSObject {
+    
 }
 
-- (NSDictionary*)lookup:(NSString*)key;
 @end
