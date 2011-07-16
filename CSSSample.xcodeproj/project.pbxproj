@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
+		1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CE13D23508007C87FE /* CSSTreeManager.m */; };
+		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
+		1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */; };
+		1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */; };
 		AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
 		AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
 		AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
@@ -36,6 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSResourceManager.h; sourceTree = "<group>"; };
+		1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSResourceManager.m; sourceTree = "<group>"; };
+		1DEE03CD13D23508007C87FE /* CSSTreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTreeManager.h; sourceTree = "<group>"; };
+		1DEE03CE13D23508007C87FE /* CSSTreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSTreeManager.m; sourceTree = "<group>"; };
+		1DEE03D013D23514007C87FE /* CSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParser.h; sourceTree = "<group>"; };
+		1DEE03D113D23514007C87FE /* CSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSParser.m; sourceTree = "<group>"; };
+		1DEE03D413D23591007C87FE /* CSSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapper.h; sourceTree = "<group>"; };
+		1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPlistMapper.h; sourceTree = "<group>"; };
+		1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPlistMapper.m; sourceTree = "<group>"; };
+		1DEE03D913D238FE007C87FE /* CSSDOMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSDOMManager.h; sourceTree = "<group>"; };
+		1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSDOMManager.m; sourceTree = "<group>"; };
 		AB50CF8413D22017001113D0 /* CSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50CF8813D22017001113D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB50CF8A13D22017001113D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +100,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DEE03C513D234A4007C87FE /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE03D013D23514007C87FE /* CSSParser.h */,
+				1DEE03D113D23514007C87FE /* CSSParser.m */,
+			);
+			name = parser;
+			sourceTree = "<group>";
+		};
+		1DEE03C913D234D0007C87FE /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE03D813D23662007C87FE /* group */,
+				1DEE03D313D2357C007C87FE /* mapper */,
+				1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */,
+				1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */,
+				1DEE03CD13D23508007C87FE /* CSSTreeManager.h */,
+				1DEE03CE13D23508007C87FE /* CSSTreeManager.m */,
+				1DEE03D913D238FE007C87FE /* CSSDOMManager.h */,
+				1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */,
+			);
+			name = managers;
+			sourceTree = "<group>";
+		};
+		1DEE03D313D2357C007C87FE /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				1DEE03D413D23591007C87FE /* CSSMapper.h */,
+				1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */,
+				1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */,
+			);
+			name = mapper;
+			sourceTree = "<group>";
+		};
+		1DEE03D813D23662007C87FE /* group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = group;
+			sourceTree = "<group>";
+		};
 		AB50CF7913D22017001113D0 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +219,8 @@
 		AB50CFC113D2201C001113D0 /* CSSApply */ = {
 			isa = PBXGroup;
 			children = (
+				1DEE03C913D234D0007C87FE /* managers */,
+				1DEE03C513D234A4007C87FE /* parser */,
 				AB50CFC313D2202C001113D0 /* vendors */,
 				AB50CFC213D22024001113D0 /* categories */,
 			);
@@ -296,6 +355,11 @@
 				AB50CF9913D22017001113D0 /* CSSSampleAppDelegate.m in Sources */,
 				AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */,
 				AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */,
+				1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */,
+				1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */,
+				1DEE03D213D23514007C87FE /* CSSParser.m in Sources */,
+				1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */,
+				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
