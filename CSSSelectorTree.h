@@ -27,23 +27,41 @@
  at each level we have a CSSSelector which contains a variety of properties (like classes, id, tag type) and a list of child
  nodes.
 
+ We also track our score for the current level (precendence) and a special subnode called "All" which represents the "base" ruleset
+ for the current subnode.
  */
 #import <Foundation/Foundation.h>
 #import "CSSSelector.h"
 
 @interface CSSSelectorTree : NSObject {
-    //array of CSSSelectors
+    //array of CSSSelectorTrees
     NSMutableArray *nodes;
+    
     NSDictionary *rules;
     CSSSelector *selector;
 }
 
+@property (readonly, nonatomic) NSString *name;
 @property (readonly, nonatomic) CSSSelector *selector;
-@property (readonly, nonatomic) NSDictionary *rules;
+@property (retain, nonatomic) NSDictionary *rules;
+// array of CSSSelectoreTree subnodes
 @property (readonly, nonatomic) NSMutableArray *nodes;
 @property (readonly, nonatomic) NSInteger score;
 
 - (void)sortNodes;
 
 - (id)initWithSelector:(CSSSelector*)selector;
+
+- (NSArray*)find:(CSSSelector*)selector_arg;
+
+- (BOOL)isLeaf;
+/** Utility method to wrap a list of CSS Selectors after parsing and breaking
+ up this large multi level selector.
+ Returns an array in reverse order of specificity.*/
++ (NSArray*)subtreesFromSelector:(NSString*)selector;
+
+/** Links array of CSSTreeSelectors together by each other (like linked list).
+ It's expected that they are sorted from most specific to least specific.
+ Returns the root node of the new "subtree".*/
++ (CSSSelectorTree*)chainSubtrees:(NSArray*)subtrees;
 @end

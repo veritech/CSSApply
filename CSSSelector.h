@@ -20,7 +20,7 @@
     // css class name (like div, ul, li, etc)
     NSString *className;
     // custom classes we defined (.ourclass,.customclass, ect)
-    NSSet *classes;
+    NSMutableArray *classes;
 }
 
 - (id)initWithSelectorStr:(NSString*)selector;
@@ -39,7 +39,7 @@
 + (NSArray*)subSelectorsFromString:(NSString*)main_selector;
 
 /** The classes which are applied to use.*/
-@property (nonatomic, readonly) NSSet *classes;
+@property (nonatomic, readonly) NSMutableArray *classes;
 @property (nonatomic, readonly) NSString *cssID;
 @property (nonatomic, readonly) NSString *className;
 @property (nonatomic, readonly) NSString *selector;

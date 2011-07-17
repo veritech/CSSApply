@@ -52,6 +52,46 @@
     
     if ([levels count]) {
         NSString *slug = [levels lastObject];
+        
+
+        NSString *class_slug = nil;
+        NSString *id_slug = nil;
+        
+        // split and try to find ids
+        NSArray *id_comps = [slug componentsSeparatedByString:@"#"];
+        if ([id_comps count] == 2) {
+            id_slug = [id_comps lastObject];
+            if (cssID) [cssID release];
+            cssID = id_slug;
+            
+            class_slug = [id_comps objectAtIndex:0];
+            //might just be id slug
+            if ([class_slug isEqualToString:@""]) class_slug = nil;
+            
+        } else {
+            class_slug = slug;
+        }
+        
+        //now we parse class slug
+        if (class_slug) {
+            NSArray *classes_comps = [class_slug componentsSeparatedByString:@"."];
+            NSAssert([classes_comps count], @"Could not parse class slug: %@", class_slug);
+            
+            //check to see if first one is class type tag (not css class)
+            // first entry will not be blank if it's a class tag
+            // sam.green = "sam", "green"
+            // .red.green = "", "red", "green"
+            if (![[classes_comps objectAtIndex:0] isEqualToString:@""]) {
+                if (className) [className release], className = nil;
+                className = [classes_comps objectAtIndex:0];
+            } else {
+                if (classes) [classes release], classes = nil;
+                classes = [[NSMutableArray arrayWithCapacity:20] retain];
+                [classes addObjectsFromArray:classes_comps];
+            }
+        }
+        
+        
     }
 }
 
@@ -65,7 +105,7 @@
     
     if (self.classes)
     {
-        NSSet *other_classes = other_selector.classes;
+        NSArray *other_classes = other_selector.classes;
         for (NSString *class in self.classes) {
             if (![other_classes containsObject:class])
             {
@@ -75,7 +115,6 @@
     }
     
     // see if the class name doens't match
-    
     if (self.className)
     {
         if (other_selector.className == nil) return NO;

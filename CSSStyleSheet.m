@@ -45,14 +45,8 @@
 }
 
 #pragma mark Tree Parsing methods
-/** Builds the giant {@link CSSSelectorTree} from Lex parser data.*/
-- (NSArray*)parseSelector:(NSString*)selector {
-    // split on spaces only (though more css may be supported in the future)
-    return [selector componentsSeparatedByString:@" "];
-}
-
 - (void)buildTree:(NSDictionary *)rules {
-    mainTree = [[NSMutableDictionary dictionaryWithCapacity:30] retain];
+    if (_root) [_root release], _root = nil;
     
     // create the root node for the selector tree
     _root = [[CSSSelectorTree alloc] init];
@@ -60,40 +54,29 @@
     NSArray *selectors = [rules allKeys];
     
     for (NSString *selector in selectors) {
-        // entry which includes score, "All" namespace, and 
-        NSMutableDictionary *element_entry = [NSMutableDictionary dictionaryWithCapacity:20];
         
         NSDictionary *ruleset = [rules objectForKey:selector];
         
-        //[element_entry setValue:[NSNumber numberWithInt:score] forKey:@"score"];
+        //grab subtrees (really horizontal list since they are sublevels.)
+        // ul, ul, li, sam.red#hello
+        NSArray *subtrees = [CSSSelectorTree subtreesFromSelector:selector];
         
-        CSSSelector *parsed_selector = [[CSSSelector alloc] initWithSelectorStr:selector];
-        CSSSelectorTree *sub_tree = [[CSSSelectorTree alloc] initWithSelector:parsed_selector];
+        if ([subtrees count] < 1)
+            return;
         
-        //NSArray *components = [self parseSelector:parse];
-        NSArray *components = nil;
-        if ([components count]) {
-            
-            if ([components count] > 1) {
-                //loop through components and insert into sub elements
-                for (NSString *component in components) {
-                    // try to find ourselves in the tree
-                }
-            } else {
-                // we create an "All" namespace
-                //[element_entry setValue:parsed_ruleset forKey:@"All"];
-            }
-
-            // remember, we ensure that the selector is reversed. 
-            [mainTree setValue:element_entry forKey:[components lastObject]];
-        }
+        //ruleset belongs to most specific (or first)
+        CSSSelectorTree *most_specific = [subtrees objectAtIndex:0];
+        most_specific.rules = ruleset;
         
-        
+        //now we convert into tree
+        CSSSelectorTree *root_subtree = [CSSSelectorTree chainSubtrees:subtrees];
+        [_root.nodes addObject:root_subtree];
     }
 }
 
 - (void)dealloc {
     [super dealloc];
-    [mainTree release], mainTree = nil;
+    [parser release], parser = nil;
+    [_root release], _root = nil;
 }
 @end

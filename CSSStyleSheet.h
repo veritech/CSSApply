@@ -30,8 +30,6 @@
 #import "CSSSelectorTree.h"
 
 @interface CSSStyleSheet : NSObject {
-    // main css style tree. Custom format.
-    NSMutableDictionary *mainTree;
     
     CSSParser *parser;
     
