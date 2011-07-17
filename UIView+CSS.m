@@ -27,21 +27,31 @@
             if (node.rules) {
                 [dict addEntriesFromDictionary:node.rules];
             }
+            
             if (node.nodes) {
                 // we need to check if we match all the way up the tree
                 // we always go all the way to the root bc we do descendant matching not just child matching but descendant
-                UIView *parent = [self CSSParent];
-                BOOL doesMatch = NO;
+                
+                BOOL doesMatch = YES;
                 //move through nodes as we move up
                 NSEnumerator *node_iter = [node.nodes objectEnumerator];
-                CSSSelectorTree *subtree = [node_iter nextObject];
-                
-                while (parent && !doesMatch) {
-                    CSSSelectorTree *subtree = [node_iter nextObject];
-                    // still have nodes left
-                    if (subtree) {
-                        
+                CSSSelectorTree *subtree = nil;
+                UIView *parent = nil;
+                while ((subtree = [node_iter nextObject]) && doesMatch) {
+                    // try to find the appropriate match up the tree
+                    doesMatch = NO;
+                    while ((parent = [self CSSParent])) {
+                        if ([parent.CSSSelector doesMatchIntoSelector:subtree.selector]) {
+                            doesMatch = YES;
+                            //parent will be left where it is on purpose. We don't want rematch a parent.
+                            break;
+                        }
                     }
+                }
+                
+                if (doesMatch) {
+                    //tell all the children to do the rule merging
+                    [self applyStylesToChildren:treeNode withInheirtedStyleDict:[node.rules]];
                 }
                 
                 
@@ -51,8 +61,6 @@
             
         }
     }
-    
-    //[self computeIntoMutipleDictionary:dict withNode:node];
     
 }
 
