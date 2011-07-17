@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSSStyleSheet.h"
+#import "CSSSelectorTree.h"
 
-@class CSSStyleSheet;
 @interface UIView (CSS)
 
 - (void)applyAll:(CSSStyleSheet*)sheet;
-- (void)apply:(CSSStyleSheet*)sheet;
+- (void)apply:(CSSSelectorTree*)treeNode;
 
 
 - (NSArray*)find:(NSString*)selector;

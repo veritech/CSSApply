@@ -40,7 +40,7 @@
 
 - (void)sortNodes;
 
-- (id)initWithSelector:(CSSSelector*)selector_arg;
+- (id)initWithSelectorStr:(NSString*)selector_arg;
 
 @property (readonly, nonatomic) NSMutableArray *nodes;
 @property (readonly, nonatomic) NSInteger score;

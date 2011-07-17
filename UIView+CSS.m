@@ -8,13 +8,14 @@
 #import "UIView+CSS.h"
 
 @implementation UIView (CSS)
+
 #pragma mark Actual application methods
 - (void)applyAll:(CSSStyleSheet *)sheet {
     
 }
 
-- (void)apply:(CSSStyleSheet *)sheet {
-    
+- (void)apply:(CSSSelectorTree *)treeNode {
+    //treeNode.selector
 }
 
 #pragma mark Searching though the "DOM"

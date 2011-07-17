@@ -9,12 +9,13 @@
 #import "NSObject+CSS.h"
 #import <objc/runtime.h>
 
-static const char *ClassNameKey = "CSSItemClassName___";
-static const char *CssID = "CSSClassIDName_____";
+static const char* kUIViewIDNameKey = "UIViewCSSIDNameKey"; 
+static const char* kUIViewClassNameKey = "UIViewCSSClassNameKey";
+static const char* kUIViewCSSSelectorKey = "UIViewCSSSelectorKey";
 
 @implementation NSObject (CSS)
 
-@dynamic cssID, classNames;
+@dynamic cssID, classNames, CSSSelector;
 
 #pragma mark - ID & Class names
 
@@ -23,7 +24,7 @@ static const char *CssID = "CSSClassIDName_____";
  *	@param a NSSet
  */
 -(void) setClassNames:(NSSet*) aClassName{
-	objc_setAssociatedObject(self, ClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 /**
@@ -32,7 +33,7 @@ static const char *CssID = "CSSClassIDName_____";
  *	@return NSSet
  */
 -(NSSet*) classNames{
-	return objc_getAssociatedObject(self, ClassNameKey);
+	return objc_getAssociatedObject(self, kUIViewClassNameKey);
 }
 
 
@@ -41,7 +42,7 @@ static const char *CssID = "CSSClassIDName_____";
  *	@param an id name
  */
 -(void) setIdName:(NSString*) anIDName{
-	objc_setAssociatedObject(self, CssID, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
+	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
 /**
@@ -49,10 +50,20 @@ static const char *CssID = "CSSClassIDName_____";
  *	@return an id name
  */
 -(NSString*) idName{
-	return (NSString*) objc_getAssociatedObject(self, CssID);
+	return (NSString*) objc_getAssociatedObject(self, kUIViewIDNameKey);
 }
 
-- (id)CSSParent {
-    return nil;
+
+-(CSSSelector*)CSSSelector {
+    CSSSelector *selector = (CSSSelector*) objc_getAssociatedObject(self,kUIViewCSSSelectorKey);
+    
+    if (!selector)
+    {
+        selector = [[CSSSelector alloc] initWithClassName:NSStringFromClass([self class]) classNames:self.classNames classID:self.idName];
+        objc_setAssociatedObject(self, kUIViewCSSSelectorKey, selector, OBJC_ASSOCIATION_RETAIN_NONATOMIC );
+    }
+    
+    return selector;
 }
+
 @end

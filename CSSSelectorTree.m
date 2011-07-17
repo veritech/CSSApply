@@ -18,13 +18,15 @@
 @implementation CSSSelectorTree
 @dynamic score;
 @synthesize nodes;
-- (id)initWithSelector:(CSSSelector *)selector_arg {
+
+- (id)initWithSelectorStr:(NSString*)selector_arg {
     self = [super init];
     if (self) {
         selector = [selector_arg retain];
     }
     return self;
 }
+
 
 #pragma mark Accessors
 - (void)sortNodes {

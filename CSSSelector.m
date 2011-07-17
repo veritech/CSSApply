@@ -14,6 +14,7 @@
 @implementation CSSSelector
 @synthesize cssID, classes, className, selector;
 @dynamic score;
+
 - (id)initWithSelectorStr:(NSString *)selector_arg {
     self = [super init];
     if (self) {
@@ -36,11 +37,12 @@
 /** Parses selector string into levels, classes, etc.*/
 - (void)parseSelector {
     NSArray *levels = [selector componentsSeparatedByString:@" "];
+    
     if ([levels count]) {
         NSString *slug = [levels lastObject];
-        
     }
 }
+
 - (NSArray*)selectorComponents {
     // just split on spaces..
     return [[self description] componentsSeparatedByString:@" "];

@@ -202,8 +202,6 @@ int cssConsume(char* text, int token) {
     _lastToken = token;
 }
 
-
-
 #pragma mark -
 #pragma mark Public
 

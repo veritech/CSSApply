@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CSSSelector.h"
 
 @interface NSObject (CSS)
 
 @property (nonatomic,copy) NSString *cssID;
 @property (nonatomic,copy) NSSet *classNames;
-//@property (nonatomic,copy) NSString *style
+@property (nonatomic,readonly) CSSSelector *CSSSelector;
 
-- (id)CSSParent;
+
 @end

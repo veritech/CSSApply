@@ -37,7 +37,6 @@
     
     CSSSelectorTree *_root;
 }
-- (NSDictionary*)lookup:(CSSSelector*)selector;
 
 - (void)loadFromURL:(NSURL*)url;
 - (void)loadFromString:(NSString*)css_code;
