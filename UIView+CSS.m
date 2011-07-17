@@ -55,8 +55,8 @@
 
 
 #pragma mark Actual application methods
-- (void)apply:(CSSStyleSheet *)sheet {
-    [self applyStylesToChildren:sheet.root withInheirtedStyleDict:[NSDictionary dictionary]];
+- (void)apply:(CSSSelectorTree *)rootNode {
+    [self applyStylesToChildren:rootNode withInheirtedStyleDict:[NSDictionary dictionary]];
     
 }
 

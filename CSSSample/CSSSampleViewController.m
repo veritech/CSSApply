@@ -7,7 +7,8 @@
 //
 
 #import "CSSSampleViewController.h"
-
+#import "UIView+CSS.h"
+#import "NSObject+CSS.h"
 @implementation CSSSampleViewController
 @synthesize sampleView;
 
@@ -32,8 +33,11 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	
-	//[[self sampleView] setStyle:@"*{background-color:}"];
+    NSURL *cssURL = [[[NSBundle mainBundle] bundleURL]URLByAppendingPathComponent:@"mainview.css"];
+    CSSStyleSheet *styleSheet = [CSSStyleSheet styleSheetFromURL:cssURL];
+	[self.view apply:styleSheet.root];
+    [styleSheet release];
+    
 }
 
 
