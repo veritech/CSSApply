@@ -36,7 +36,6 @@
     NSURL *cssURL = [[[NSBundle mainBundle] bundleURL]URLByAppendingPathComponent:@"mainview.css"];
     CSSStyleSheet *styleSheet = [CSSStyleSheet styleSheetFromURL:cssURL];
 	[self.view apply:styleSheet.root];
-    [styleSheet release];
     
 }
 

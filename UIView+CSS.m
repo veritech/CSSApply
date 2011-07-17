@@ -5,9 +5,9 @@
 //  Created by Jonathan Dalrymple on 16/07/2011.
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 
+#import <Foundation/Foundation.h>
 #import "UIView+CSS.h"
 #import "NSObject+CSS.h"
-#import <NSKeyValueCoding.h>
 
 @implementation UIView (CSS)
 - (void)applyProperties:(NSDictionary*)props {
@@ -16,7 +16,7 @@
         @try {
             [self setValue:[props objectForKey:key] forKeyPath:key];
         }
-        @catch (NSUndefinedKeyException *exception) {
+        @catch (NSException *exception) {
             NSLog(@"Key does not exist when trying to set from css: %@", [exception reason]);
         }
     }
