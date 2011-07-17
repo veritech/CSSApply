@@ -47,13 +47,15 @@
     
     //start with most specific and begin chaining
     CSSSelectorTree *cur_parent = [subtrees objectAtIndex:0];
+    CSSSelectorTree *top_parent = cur_parent;
+    
     for (CSSSelectorTree *subtree in subtrees) {
         if (subtree != cur_parent) {
             [cur_parent.nodes addObject:subtree];
             cur_parent = subtree; //move into subtree
         }
     }
-    return cur_parent;
+    return top_parent;
 }
 #pragma mark Accessors
 - (void)sortNodes {

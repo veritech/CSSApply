@@ -57,21 +57,41 @@
         NSString *class_slug = nil;
         NSString *id_slug = nil;
         
-        NSScanner *scanner = [NSScanner scannerWithString:slug];
-        //try to find id tag
-        BOOL foundId = [scanner scanUpToString:@"#" intoString:&class_slug];
-        if (foundId) {
-            [scanner scanString:@"#" intoString:NULL]; // move past string
-            id_slug = [[scanner string] substringFromIndex:[scanner scanLocation]];
+        // split and try to find ids
+        NSArray *id_comps = [slug componentsSeparatedByString:@"#"];
+        if ([id_comps count] == 2) {
+            id_slug = [id_comps lastObject];
+            if (cssID) [cssID release];
+            cssID = id_slug;
             
-            if(cssID) [cssID release];
-            cssID = [id_slug retain];
+            class_slug = [id_comps objectAtIndex:0];
+            //might just be id slug
+            if ([class_slug isEqualToString:@""]) class_slug = nil;
+            
         } else {
-            
+            class_slug = slug;
         }
         
-        // now we parse the classes
-        //NSArray *class_comps = [class_slug
+        //now we parse class slug
+        if (class_slug) {
+            NSArray *classes_comps = [class_slug componentsSeparatedByString:@"."];
+            NSAssert([classes_comps count], @"Could not parse class slug: %@", class_slug);
+            
+            //check to see if first one is class type tag (not css class)
+            // first entry will not be blank if it's a class tag
+            // sam.green = "sam", "green"
+            // .red.green = "", "red", "green"
+            if (![[classes_comps objectAtIndex:0] isEqualToString:@""]) {
+                if (className) [className release], className = nil;
+                className = [classes_comps objectAtIndex:0];
+            } else {
+                if (classes) [classes release], classes = nil;
+                classes = [[NSMutableArray arrayWithCapacity:20] retain];
+                [classes addObjectsFromArray:classes_comps];
+            }
+        }
+        
+        
     }
 }
 
@@ -85,7 +105,7 @@
     
     if (self.classes)
     {
-        NSSet *other_classes = other_selector.classes;
+        NSArray *other_classes = other_selector.classes;
         for (NSString *class in self.classes) {
             if (![other_classes containsObject:class])
             {
