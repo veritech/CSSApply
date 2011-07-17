@@ -21,6 +21,7 @@
 - (NSArray*)find:(NSString*)selector;
 - (NSArray*)findAll:(NSString*)selector;
 
+-(id) CSSParent;
 
 @property (nonatomic,copy) NSString *cssID;
 @property (nonatomic,copy) NSSet *classNames;

@@ -12,7 +12,10 @@
 		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
 		1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */; };
+		1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */; };
 		1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */; };
+		AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ECAE013D25A9F00E151DF /* CALayer+CSS.m */; };
+		AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ECAE413D25B0A00E151DF /* NSObject+CSS.m */; };
 		AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
 		AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
 		AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
@@ -22,24 +25,22 @@
 		AB50CF9C13D22017001113D0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB50CF9A13D22017001113D0 /* MainWindow.xib */; };
 		AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CF9E13D22017001113D0 /* CSSSampleViewController.m */; };
 		AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFA013D22017001113D0 /* CSSSampleViewController.xib */; };
-		AB50CFA913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
-		AB50CFAA13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
-		AB50CFAB13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
-		AB50CFB313D22017001113D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFB113D22017001113D0 /* InfoPlist.strings */; };
-		AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFB513D22017001113D0 /* CSSSampleTests.h */; };
-		AB50CFB813D22017001113D0 /* CSSSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CFB713D22017001113D0 /* CSSSampleTests.m */; };
+		AB588FBB13D243FE00EC6441 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
+		AB588FBC13D243FE00EC6441 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
+		AB588FBD13D243FE00EC6441 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
+		AB588FC313D243FE00EC6441 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB588FC113D243FE00EC6441 /* InfoPlist.strings */; };
+		AB588FC913D243FE00EC6441 /* TestsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588FC813D243FE00EC6441 /* TestsAppDelegate.m */; };
+		AB588FD013D2441600EC6441 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB588F9713D2412500EC6441 /* GHUnitIOS.framework */; };
+		AB588FD113D2442600EC6441 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588F9B13D2427100EC6441 /* GHUnitIOSTestMain.m */; };
+		AB588FD513D245A700EC6441 /* CSSObjectCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */; };
+		AB588FD613D24AC300EC6441 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
+		AB588FD913D24DB500EC6441 /* CSSViewSelectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588FD813D24DB500EC6441 /* CSSViewSelectorTest.m */; };
 		AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
+		D9141F5C13D26A4A006B25E0 /* css.m in Sources */ = {isa = PBXBuildFile; fileRef = D9141F5A13D26A4A006B25E0 /* css.m */; };
+		D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */ = {isa = PBXBuildFile; fileRef = D9141F5B13D26A4A006B25E0 /* mcss.grammer */; };
+		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
+		D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AB50CFAC13D22017001113D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB50CF7B13D22017001113D0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB50CF8313D22017001113D0;
-			remoteInfo = CSSSample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1DEC907C13D24BE7005BCF07 /* CSSRuleset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRuleset.h; sourceTree = "<group>"; };
@@ -53,8 +54,13 @@
 		1DEE03D413D23591007C87FE /* CSSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapper.h; sourceTree = "<group>"; };
 		1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPlistMapper.h; sourceTree = "<group>"; };
 		1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPlistMapper.m; sourceTree = "<group>"; };
+		1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSDOMManager.m; sourceTree = "<group>"; };
 		1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheet.h; sourceTree = "<group>"; };
 		1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheet.m; sourceTree = "<group>"; };
+		AB0ECADF13D25A9F00E151DF /* CALayer+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CSS.h"; sourceTree = "<group>"; };
+		AB0ECAE013D25A9F00E151DF /* CALayer+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+CSS.m"; sourceTree = "<group>"; };
+		AB0ECAE313D25B0A00E151DF /* NSObject+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CSS.h"; sourceTree = "<group>"; };
+		AB0ECAE413D25B0A00E151DF /* NSObject+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CSS.m"; sourceTree = "<group>"; };
 		AB50CF8413D22017001113D0 /* CSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50CF8813D22017001113D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB50CF8A13D22017001113D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -69,14 +75,25 @@
 		AB50CF9D13D22017001113D0 /* CSSSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSampleViewController.h; sourceTree = "<group>"; };
 		AB50CF9E13D22017001113D0 /* CSSSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleViewController.m; sourceTree = "<group>"; };
 		AB50CFA113D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CSSSampleViewController.xib; sourceTree = "<group>"; };
-		AB50CFA813D22017001113D0 /* CSSSampleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSSSampleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB50CFB013D22017001113D0 /* CSSSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CSSSampleTests-Info.plist"; sourceTree = "<group>"; };
-		AB50CFB213D22017001113D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AB50CFB413D22017001113D0 /* CSSSampleTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CSSSampleTests-Prefix.pch"; sourceTree = "<group>"; };
-		AB50CFB513D22017001113D0 /* CSSSampleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSSampleTests.h; sourceTree = "<group>"; };
-		AB50CFB713D22017001113D0 /* CSSSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleTests.m; sourceTree = "<group>"; };
+		AB588F9713D2412500EC6441 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = "vendors/GHUnit/Examples/MyTestable-iOS/Frameworks/GHUnitIOS.framework"; sourceTree = "<group>"; };
+		AB588F9B13D2427100EC6441 /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = SOURCE_ROOT; };
+		AB588FB913D243FE00EC6441 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB588FC013D243FE00EC6441 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		AB588FC213D243FE00EC6441 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AB588FC413D243FE00EC6441 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		AB588FC713D243FE00EC6441 /* TestsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestsAppDelegate.h; sourceTree = "<group>"; };
+		AB588FC813D243FE00EC6441 /* TestsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestsAppDelegate.m; sourceTree = "<group>"; };
+		AB588FD313D245A700EC6441 /* CSSObjectCategoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSObjectCategoryTest.h; path = Tests/CSSObjectCategoryTest.h; sourceTree = SOURCE_ROOT; };
+		AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSObjectCategoryTest.m; path = Tests/CSSObjectCategoryTest.m; sourceTree = SOURCE_ROOT; };
+		AB588FD713D24DB500EC6441 /* CSSViewSelectorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSViewSelectorTest.h; sourceTree = "<group>"; };
+		AB588FD813D24DB500EC6441 /* CSSViewSelectorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSViewSelectorTest.m; sourceTree = "<group>"; };
 		AB5B475013D2272B00FB2A74 /* UIView+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSS.h"; sourceTree = "<group>"; };
 		AB5B475113D2272B00FB2A74 /* UIView+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSS.m"; sourceTree = "<group>"; };
+		D9141F5913D26A4A006B25E0 /* css.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = css.h; path = lex/css.h; sourceTree = "<group>"; };
+		D9141F5A13D26A4A006B25E0 /* css.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = css.m; path = lex/css.m; sourceTree = "<group>"; };
+		D9141F5B13D26A4A006B25E0 /* mcss.grammer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcss.grammer; path = lex/mcss.grammer; sourceTree = "<group>"; };
+		D9141F5F13D26AAB006B25E0 /* CSSTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTokens.h; sourceTree = "<group>"; };
+		D9C27FF213D24CA3000B1A43 /* testcase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = testcase.css; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,13 +107,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB50CFA413D22017001113D0 /* Frameworks */ = {
+		AB588FB613D243FE00EC6441 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB50CFA913D22017001113D0 /* UIKit.framework in Frameworks */,
-				AB50CFAA13D22017001113D0 /* Foundation.framework in Frameworks */,
-				AB50CFAB13D22017001113D0 /* CoreGraphics.framework in Frameworks */,
+				AB588FBB13D243FE00EC6441 /* UIKit.framework in Frameworks */,
+				AB588FBC13D243FE00EC6441 /* Foundation.framework in Frameworks */,
+				AB588FBD13D243FE00EC6441 /* CoreGraphics.framework in Frameworks */,
+				AB588FD013D2441600EC6441 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +124,7 @@
 		1DEE03C513D234A4007C87FE /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				1DF02A9E13D285D3005A3D0C /* Lex */,
 				1DEE03D013D23514007C87FE /* CSSParser.h */,
 				1DEE03D113D23514007C87FE /* CSSParser.m */,
 				1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */,
@@ -146,12 +165,23 @@
 			name = group;
 			sourceTree = "<group>";
 		};
+		1DF02A9E13D285D3005A3D0C /* Lex */ = {
+			isa = PBXGroup;
+			children = (
+				D9141F5B13D26A4A006B25E0 /* mcss.grammer */,
+				D9141F5F13D26AAB006B25E0 /* CSSTokens.h */,
+				D9141F5913D26A4A006B25E0 /* css.h */,
+				D9141F5A13D26A4A006B25E0 /* css.m */,
+			);
+			name = Lex;
+			sourceTree = "<group>";
+		};
 		AB50CF7913D22017001113D0 = {
 			isa = PBXGroup;
 			children = (
 				AB50CFC113D2201C001113D0 /* CSSApply */,
 				AB50CF8E13D22017001113D0 /* CSSSample */,
-				AB50CFAE13D22017001113D0 /* CSSSampleTests */,
+				AB588FBE13D243FE00EC6441 /* Tests */,
 				AB50CF8713D22017001113D0 /* Frameworks */,
 				AB50CF8513D22017001113D0 /* Products */,
 			);
@@ -161,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				AB50CF8413D22017001113D0 /* CSSSample.app */,
-				AB50CFA813D22017001113D0 /* CSSSampleTests.octest */,
+				AB588FB913D243FE00EC6441 /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +199,7 @@
 		AB50CF8713D22017001113D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB588F9713D2412500EC6441 /* GHUnitIOS.framework */,
 				AB50CF8813D22017001113D0 /* UIKit.framework */,
 				AB50CF8A13D22017001113D0 /* Foundation.framework */,
 				AB50CF8C13D22017001113D0 /* CoreGraphics.framework */,
@@ -193,30 +224,11 @@
 		AB50CF8F13D22017001113D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9C27FF213D24CA3000B1A43 /* testcase.css */,
 				AB50CF9013D22017001113D0 /* CSSSample-Info.plist */,
 				AB50CF9113D22017001113D0 /* InfoPlist.strings */,
 				AB50CF9413D22017001113D0 /* CSSSample-Prefix.pch */,
 				AB50CF9513D22017001113D0 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AB50CFAE13D22017001113D0 /* CSSSampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				AB50CFB513D22017001113D0 /* CSSSampleTests.h */,
-				AB50CFB713D22017001113D0 /* CSSSampleTests.m */,
-				AB50CFAF13D22017001113D0 /* Supporting Files */,
-			);
-			path = CSSSampleTests;
-			sourceTree = "<group>";
-		};
-		AB50CFAF13D22017001113D0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AB50CFB013D22017001113D0 /* CSSSampleTests-Info.plist */,
-				AB50CFB113D22017001113D0 /* InfoPlist.strings */,
-				AB50CFB413D22017001113D0 /* CSSSampleTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +249,10 @@
 			children = (
 				AB5B475013D2272B00FB2A74 /* UIView+CSS.h */,
 				AB5B475113D2272B00FB2A74 /* UIView+CSS.m */,
+				AB0ECADF13D25A9F00E151DF /* CALayer+CSS.h */,
+				AB0ECAE013D25A9F00E151DF /* CALayer+CSS.m */,
+				AB0ECAE313D25B0A00E151DF /* NSObject+CSS.h */,
+				AB0ECAE413D25B0A00E151DF /* NSObject+CSS.m */,
 			);
 			name = categories;
 			sourceTree = "<group>";
@@ -246,6 +262,39 @@
 			children = (
 			);
 			name = vendors;
+			sourceTree = "<group>";
+		};
+		AB588FBE13D243FE00EC6441 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AB588FD213D2452100EC6441 /* Test Cases */,
+				AB588FC713D243FE00EC6441 /* TestsAppDelegate.h */,
+				AB588FC813D243FE00EC6441 /* TestsAppDelegate.m */,
+				AB588FBF13D243FE00EC6441 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AB588FBF13D243FE00EC6441 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB588F9B13D2427100EC6441 /* GHUnitIOSTestMain.m */,
+				AB588FC013D243FE00EC6441 /* Tests-Info.plist */,
+				AB588FC113D243FE00EC6441 /* InfoPlist.strings */,
+				AB588FC413D243FE00EC6441 /* Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB588FD213D2452100EC6441 /* Test Cases */ = {
+			isa = PBXGroup;
+			children = (
+				AB588FD313D245A700EC6441 /* CSSObjectCategoryTest.h */,
+				AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */,
+				AB588FD713D24DB500EC6441 /* CSSViewSelectorTest.h */,
+				AB588FD813D24DB500EC6441 /* CSSViewSelectorTest.m */,
+			);
+			name = "Test Cases";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,24 +317,22 @@
 			productReference = AB50CF8413D22017001113D0 /* CSSSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AB50CFA713D22017001113D0 /* CSSSampleTests */ = {
+		AB588FB813D243FE00EC6441 /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB50CFBE13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSampleTests" */;
+			buildConfigurationList = AB588FCD13D243FE00EC6441 /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				AB50CFA313D22017001113D0 /* Sources */,
-				AB50CFA413D22017001113D0 /* Frameworks */,
-				AB50CFA513D22017001113D0 /* Resources */,
-				AB50CFA613D22017001113D0 /* ShellScript */,
+				AB588FB513D243FE00EC6441 /* Sources */,
+				AB588FB613D243FE00EC6441 /* Frameworks */,
+				AB588FB713D243FE00EC6441 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AB50CFAD13D22017001113D0 /* PBXTargetDependency */,
 			);
-			name = CSSSampleTests;
-			productName = CSSSampleTests;
-			productReference = AB50CFA813D22017001113D0 /* CSSSampleTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			name = Tests;
+			productName = Tests;
+			productReference = AB588FB913D243FE00EC6441 /* Tests.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -308,7 +355,7 @@
 			projectRoot = "";
 			targets = (
 				AB50CF8313D22017001113D0 /* CSSSample */,
-				AB50CFA713D22017001113D0 /* CSSSampleTests */,
+				AB588FB813D243FE00EC6441 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,35 +368,21 @@
 				AB50CF9313D22017001113D0 /* InfoPlist.strings in Resources */,
 				AB50CF9C13D22017001113D0 /* MainWindow.xib in Resources */,
 				AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */,
+				D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */,
+				D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB50CFA513D22017001113D0 /* Resources */ = {
+		AB588FB713D243FE00EC6441 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB50CFB313D22017001113D0 /* InfoPlist.strings in Resources */,
-				AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */,
+				D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */,
+				AB588FC313D243FE00EC6441 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		AB50CFA613D22017001113D0 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB50CF8013D22017001113D0 /* Sources */ = {
@@ -366,26 +399,26 @@
 				1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */,
 				1DEC907E13D24BE7005BCF07 /* CSSRuleset.m in Sources */,
 				1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */,
+				D9141F5C13D26A4A006B25E0 /* css.m in Sources */,
+				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
+				AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */,
+				AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AB50CFA313D22017001113D0 /* Sources */ = {
+		AB588FB513D243FE00EC6441 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB50CFB813D22017001113D0 /* CSSSampleTests.m in Sources */,
+				AB588FC913D243FE00EC6441 /* TestsAppDelegate.m in Sources */,
+				AB588FD113D2442600EC6441 /* GHUnitIOSTestMain.m in Sources */,
+				AB588FD513D245A700EC6441 /* CSSObjectCategoryTest.m in Sources */,
+				AB588FD613D24AC300EC6441 /* UIView+CSS.m in Sources */,
+				AB588FD913D24DB500EC6441 /* CSSViewSelectorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		AB50CFAD13D22017001113D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB50CF8313D22017001113D0 /* CSSSample */;
-			targetProxy = AB50CFAC13D22017001113D0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB50CF9113D22017001113D0 /* InfoPlist.strings */ = {
@@ -412,10 +445,10 @@
 			name = CSSSampleViewController.xib;
 			sourceTree = "<group>";
 		};
-		AB50CFB113D22017001113D0 /* InfoPlist.strings */ = {
+		AB588FC113D243FE00EC6441 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AB50CFB213D22017001113D0 /* en */,
+				AB588FC213D243FE00EC6441 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -460,6 +493,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendors/GHUnit/Examples/MyTestable-iOS/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
@@ -474,6 +511,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/vendors/GHUnit/Examples/MyTestable-iOS/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
 				INFOPLIST_FILE = "CSSSample/CSSSample-Info.plist";
@@ -483,47 +524,49 @@
 			};
 			name = Release;
 		};
-		AB50CFBF13D22017001113D0 /* Debug */ = {
+		AB588FCE13D243FE00EC6441 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSSSample.app/CSSSample";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+					"\"$(SRCROOT)/vendors/GHUnit/Examples/MyTestable-iOS/Frameworks\"",
 				);
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CSSSampleTests/CSSSampleTests-Prefix.pch";
-				INFOPLIST_FILE = "CSSSampleTests/CSSSampleTests-Info.plist";
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		AB50CFC013D22017001113D0 /* Release */ = {
+		AB588FCF13D243FE00EC6441 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CSSSample.app/CSSSample";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
+					"\"$(SRCROOT)/vendors/GHUnit/Examples/MyTestable-iOS/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CSSSampleTests/CSSSampleTests-Prefix.pch";
-				INFOPLIST_FILE = "CSSSampleTests/CSSSampleTests-Info.plist";
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
 				OTHER_LDFLAGS = (
-					"-framework",
-					SenTestingKit,
+					"-ObjC",
+					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -548,11 +591,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB50CFBE13D22017001113D0 /* Build configuration list for PBXNativeTarget "CSSSampleTests" */ = {
+		AB588FCD13D243FE00EC6441 /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AB50CFBF13D22017001113D0 /* Debug */,
-				AB50CFC013D22017001113D0 /* Release */,
+				AB588FCE13D243FE00EC6441 /* Debug */,
+				AB588FCF13D243FE00EC6441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

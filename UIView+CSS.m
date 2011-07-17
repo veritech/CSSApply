@@ -6,27 +6,22 @@
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 
-#import "UIVIew+CSS.h"
-#import <objc/runtime.h>
+#import "UIView+CSS.h"
 
-#define kUIViewIDNameKey "UIViewCSSIDNameKey" 
-#define kUIViewClassNameKey "UIViewCSSClassNameKey"
-
+static const char *ClassName = "CSSItemClassName___";
+static const char *CssID = "CSSClassIDName_____";
 @implementation UIView (CSS)
-
 @dynamic cssID;
 @dynamic classNames;
 
 #pragma mark - ID & Class names
-
-
 -(void) setClassNames:(NSSet*) aClassName{
-	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+	objc_setAssociatedObject(self, ClassName, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 
 -(NSSet*) classNames{
-	return objc_getAssociatedObject(self, kUIViewClassNameKey);
+	return objc_getAssociatedObject(self, ClassName);
 }
 
 -(void) addClassName:(NSString*) aName{
@@ -51,11 +46,11 @@
 }
 
 -(void) setCssID:(NSString *)cssID {
-	objc_setAssociatedObject(self, kUIViewIDNameKey, cssID, OBJC_ASSOCIATION_COPY_NONATOMIC );
+	objc_setAssociatedObject(self, CssID, cssID, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
 -(NSString*) cssID{
-	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
+	return (NSString*) objc_getAssociatedObject(self,CssID);
 }
 
 
@@ -73,5 +68,7 @@
     
 }
 
-
+-(id) CSSParent{
+	return [self superview];
+}
 @end

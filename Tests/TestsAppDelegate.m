@@ -1,32 +1,21 @@
 //
-//  CSSSampleAppDelegate.m
-//  CSSSample
+//  TestsAppDelegate.m
+//  Tests
 //
 //  Created by Jonathan Dalrymple on 16/07/2011.
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 
-#import "CSSSampleAppDelegate.h"
+#import "TestsAppDelegate.h"
 
-#import "CSSSampleViewController.h"
-
-#import "CSSParser.h"
-
-@implementation CSSSampleAppDelegate
+@implementation TestsAppDelegate
 
 
 @synthesize window=_window;
 
-@synthesize viewController=_viewController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 	// Override point for customization after application launch.
-	 
-    CSSParser *parser = [[CSSParser alloc] init];
-    NSLog(@"%@",[parser parseFilename:[[[NSBundle mainBundle] bundlePath]stringByAppendingPathComponent:@"testcase.css"]]);
-   
-	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
     return YES;
 }
@@ -73,7 +62,6 @@
 - (void)dealloc
 {
 	[_window release];
-	[_viewController release];
     [super dealloc];
 }
 
