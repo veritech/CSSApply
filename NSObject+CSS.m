@@ -55,11 +55,11 @@ static const char* kUIViewCSSSelectorKey = "UIViewCSSSelectorKey";
 
 
 -(CSSSelector*)CSSSelector {
-    CSSSelector *selector = (CSSSelector*) objc_getAssociatedObject(self,kUIViewCSSSelectorKey);
+    CSSSelector *selector = (CSSSelector*) objc_getAssociatedObject(self, kUIViewCSSSelectorKey);
     
     if (!selector)
     {
-        selector = [[CSSSelector alloc] initWithClassName:NSStringFromClass([self class]) classNames:self.classNames classID:self.idName];
+        selector = [[CSSSelector alloc] initWithClassName:NSStringFromClass([self class]) classNames:self.classNames classID:self.cssID];
         objc_setAssociatedObject(self, kUIViewCSSSelectorKey, selector, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     

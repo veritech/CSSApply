@@ -15,9 +15,8 @@
 - (void)applyAll:(CSSStyleSheet*)sheet;
 - (void)apply:(CSSSelectorTree*)treeNode;
 
-
-- (NSArray*)find:(NSString*)selector;
-- (NSArray*)findAll:(NSString*)selector;
+- (NSArray*)find:(CSSSelector*)selector;
+- (NSArray*)findAll:(CSSSelector*)selector;
 
 -(id) CSSParent;
 

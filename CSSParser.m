@@ -35,8 +35,6 @@ int cssConsume(char* text, int token) {
 
 
 @implementation CSSParser
-
-
 - (id)init {
 	self = [super init];
     if (self) {

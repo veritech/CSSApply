@@ -115,7 +115,6 @@
     }
     
     // see if the class name doens't match
-    
     if (self.className)
     {
         if (other_selector.className == nil) return NO;
