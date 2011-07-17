@@ -22,20 +22,22 @@
     }
     return self;
 }
-- (id)initWithSelector:(NSString *)selector_arg {
-    self = [super init];
-    if (self) {
-        selector = [selector_arg retain];
-        [self parseSelector];
++ (NSArray*)subSelectorsFromString:(NSString *)main_selector {
+    NSArray *sels = [main_selector componentsSeparatedByString:@" "];
+    
+    NSMutableArray *parsed_sels = [NSMutableArray arrayWithCapacity:30];
+    for (NSString *sel in sels) {
+        CSSSelector *parsed_sel = [[CSSSelector alloc] initWithSelectorStr:sel];
+        [parsed_sels addObject:parsed_sel];
     }
-    return self;
+    return parsed_sels;
 }
 #pragma mark accessor methods
-
 /** Parses selector string into levels, classes, etc.*/
 - (void)parseSelector {
-    for (int i=0;i<[selector count]; i++) {
-        unichar current_char = [selector characterAtIndex:i];
+    NSArray *levels = [selector componentsSeparatedByString:@" "];
+    if ([levels count]) {
+        NSString *slug = [levels lastObject];
         
     }
 }
@@ -43,8 +45,8 @@
     // just split on spaces..
     return [[self description] componentsSeparatedByString:@" "];
 }
-- (BOOL)doesMatch:(CSSSelector *)selector {
-    NSArray *other_classes = selector.classes;
+- (BOOL)doesMatch:(CSSSelector *)other_selector {
+    NSArray *other_classes = other_selector.classes;
     
     // see if any of the classes DON'T match
     BOOL doesMatch = NO;
@@ -55,10 +57,10 @@
             doesMatch = NO;
     }
     // see if the class name doens't match
-    doesMatch &= [self.className isEqualToString:selector.className];
+    doesMatch &= [self.className isEqualToString:other_selector.className];
     
     // finally see if the id matches (might not...)
-    doesMatch &= [self.cssID isEqualToString:selector.cssID];
+    doesMatch &= [self.cssID isEqualToString:other_selector.cssID];
     
     return doesMatch;
 }
@@ -71,7 +73,10 @@
  The score is based on the following:
  ID are always worth 100
  Class are always worth 10
- HTML tags (class type tags) are always worth 1*/
+ HTML tags (class type tags) are always worth 1.
+ 
+ Since the score is so simple to calculate, we simply re-run everytime and don't
+ cache.*/
 - (NSInteger)score {
     NSInteger score = 0;
     score += (cssID ? 100 : 0);

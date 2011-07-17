@@ -6,10 +6,10 @@
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 /**
- This class represents a CSS selector and all of it's components. It represents an entire selector but usually only the last
- part or "slug" is used. For example, in "ul ul li div.red#sam" the "div.red#sam" would be used the most. Why? The CSSSelectorTree
+ This class represents a CSS selector but only the last component or "slug". We discard all the levels (e.g. "ul ul li")
+ and just use the ending selector. This allows us to parse more appropriate information such as css class name, css id tag, etc.
  
- is the one who handles descendants.*/
+ */
 #import <Foundation/Foundation.h>
 
 
@@ -27,8 +27,12 @@
  * The components which are separated by spaces (mainly descendant selectors).
  */
 - (NSArray*)selectorComponents;
-/** Checks to see if we partially match the specified selector.*/
+
+/** Checks to see if we partially/fully match the specified selector.*/
 - (BOOL)doesMatch:(CSSSelector*)selector;
+
+/** Convenience method to break long string (with mul sub selectors) into multiple small sub selectors.*/
++ (NSArray*)subSelectorsFromString:(NSString*)main_selector;
 
 /** The classes which are applied to use.*/
 @property (nonatomic, readonly) NSArray *classes;

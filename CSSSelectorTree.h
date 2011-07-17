@@ -33,11 +33,15 @@
 @class CSSSelector;
 @interface CSSSelectorTree : NSObject {
     //array of CSSSelectors
-    NSArray *nodes;
+    NSMutableArray *nodes;
     
     CSSSelector *selector;
 }
 
-@property (readonly, nonatomic) NSArray *nodes;
+- (void)sortNodes;
+
+- (id)initWithSelector:(CSSSelector*)selector_arg;
+
+@property (readonly, nonatomic) NSMutableArray *nodes;
 @property (readonly, nonatomic) NSInteger score;
 @end

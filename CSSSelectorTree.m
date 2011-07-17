@@ -18,8 +18,28 @@
 @implementation CSSSelectorTree
 @dynamic score;
 @synthesize nodes;
+- (id)initWithSelector:(CSSSelector *)selector_arg {
+    self = [super init];
+    if (self) {
+        selector = [selector_arg retain];
+    }
+    return self;
+}
 
 #pragma mark Accessors
+- (void)sortNodes {
+    [nodes sortUsingComparator:(NSComparator)^(CSSSelector *a_sel, CSSSelector *b_sel) {
+        NSInteger a_score = [a_sel score];
+        NSInteger b_score = [b_sel score];
+        
+        if (a_score < b_score)
+            return NSOrderedAscending;
+        else if(a_score > b_score)
+            return NSOrderedDescending;
+        else
+            return NSOrderedSame;
+    }];
+}
 /** Takes the biggest child score to ensure we reflect the child nodes accurately.
  Note: this may not be quite right. How do we know we "own" the biggest node?*/
 - (NSInteger)score {
@@ -29,5 +49,17 @@
         max_score = (score > max_score ? score : max_score);
     }
     return max_score;
+}
+- (NSMutableArray*)nodes {
+    
+    if (!nodes) {
+        nodes = [[NSMutableDictionary dictionaryWithCapacity:20] retain];
+    }
+    return nodes;
+}
+
+- (void)dealloc {
+    [nodes release], nodes = nil;
+    [super dealloc];
 }
 @end
