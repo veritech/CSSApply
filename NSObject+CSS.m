@@ -9,12 +9,13 @@
 #import "NSObject+CSS.h"
 #import <objc/runtime.h>
 
-#define kUIViewIDNameKey "UIViewCSSIDNameKey" 
-#define kUIViewClassNameKey "UIViewCSSClassNameKey"
+static const char* kUIViewIDNameKey = "UIViewCSSIDNameKey"; 
+static const char* kUIViewClassNameKey = "UIViewCSSClassNameKey";
+static const char* kUIViewCSSSelectorKey = "UIViewCSSSelectorKey";
 
 @implementation NSObject (CSS)
 
-@dynamic cssID, classNames;
+@dynamic cssID, classNames, CSSSelector;
 
 #pragma mark - ID & Class names
 
@@ -51,4 +52,18 @@
 -(NSString*) idName{
 	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
 }
+
+
+-(CSSSelector*)CSSSelector {
+    CSSSelector *selector = (CSSSelector*) objc_getAssociatedObject(self,kUIViewCSSSelectorKey);
+    
+    if (!selector)
+    {
+        selector = [[CSSSelector alloc] initWithClassName:NSStringFromClass([self class]) classNames:self.classNames classID:self.idName];
+        objc_setAssociatedObject(self, kUIViewCSSSelectorKey, selector, OBJC_ASSOCIATION_RETAIN_NONATOMIC );
+    }
+    
+    return selector;
+}
+
 @end

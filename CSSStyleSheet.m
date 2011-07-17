@@ -37,21 +37,23 @@
     parser = [[CSSParser alloc] init];
     
     // grab the entire file and load the rule dictionary.
-    NSDictionary *rules = [parser parseURL:url];
+    NSDictionary *rules = [parser parseFilename:[url path]];
     
     //build the tree from the parsed rules
     [self buildTree:rules];
-    
 }
+
 - (void)loadFromString:(NSString *)css_code {
     //TODO: load from string (need it in the parser class.)
 }
+
 #pragma mark Tree Parsing methods
 /** breaks selector into componeonts (class, id, etc)*/
 - (NSArray*)parseSelector:(NSString*)selector {
     // split on spaces only (though more css may be supported in the future)
     return [selector componentsSeparatedByString:@" "];
 }
+
 - (void)buildTree:(NSDictionary *)rules {
     mainTree = [[NSMutableDictionary dictionaryWithCapacity:30] retain];
     

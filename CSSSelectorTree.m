@@ -18,6 +18,7 @@
 @implementation CSSSelectorTree
 @dynamic score;
 @synthesize nodes;
+@synthesize rules;
 
 #pragma mark Accessors
 /** Takes the biggest child score to ensure we reflect the child nodes accurately.
