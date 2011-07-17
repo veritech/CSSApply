@@ -74,7 +74,7 @@
             if ([components count] > 1) {
                 //loop through components and insert into sub elements
                 for (NSString *component in components) {
-                    
+                    // try to find ourselves in the tree
                 }
             } else {
                 // we create an "All" namespace

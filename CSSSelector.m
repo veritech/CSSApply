@@ -13,6 +13,7 @@
 
 @implementation CSSSelector
 @synthesize main, slug;
+@dynamic score;
 
 - (id)initWithSelector:(NSString *)selector {
     self = [super init];
@@ -47,6 +48,12 @@
 - (NSString*)description {
     return [NSString stringWithFormat:@"%@%@", main, slug];
 }
+
+/** calculates precedence score based on number of classes, ids, etc.*/
+- (NSInteger)score {
+    
+}
+
 - (void)dealloc {
     [super dealloc];
     [main release], main = nil;

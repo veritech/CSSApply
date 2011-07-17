@@ -31,4 +31,5 @@
 //not the best idea to update these directly.
 @property (nonatomic, retain) NSString *main;
 @property (nonatomic, retain) NSString *slug; 
+@property (readonly) NSinteger score;
 @end
