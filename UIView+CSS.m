@@ -7,16 +7,23 @@
 
 #import "UIView+CSS.h"
 #import "NSObject+CSS.h"
+#import <NSKeyValueCoding.h>
 
 @implementation UIView (CSS)
-
-
-- (void)computeIntoMutableDictionary:(NSMutableDictionary *)dict withNode:(CSSSelectorTree *)node
-{
-    
+- (void)applyProperties:(NSDictionary*)props {
+    NSArray *keys = [props allKeys];
+    for (NSString *key in keys) {
+        @try {
+            [self setValue:[props objectForKey:key] forKeyPath:key];
+        }
+        @catch (NSUndefinedKeyException *exception) {
+            NSLog(@"Key does not exist when trying to set from css: %@", [exception reason]);
+        }
+    }
 }
-
-- (void)applyStylesToChildren:(CSSSelectorTree *)treeNode withInheirtedStyleDict:(NSDictionary *)mdict {
+- (void)applyStylesToChildren:(CSSSelectorTree *)treeNode 
+       withInheirtedStyleDict:(NSDictionary *)mdict
+                      recurse:(BOOL)doRecurse{
     
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:mdict];
     
@@ -25,9 +32,11 @@
         if ([node.selector doesMatchIntoSelector:self.CSSSelector]) {
             
             if (node.rules) {
+                // will replace inherited (as expected)
                 [dict addEntriesFromDictionary:node.rules];
             }
             
+            // if it has nodes, we need to match upwards in the tree.
             if (node.nodes) {
                 // we need to check if we match all the way up the tree
                 // we always go all the way to the root bc we do descendant matching not just child matching but descendant
@@ -48,18 +57,24 @@
                         }
                     }
                 }
-                
                 if (doesMatch) {
-                    //tell all the children to do the rule merging
-                    [self applyStylesToChildren:treeNode withInheirtedStyleDict:[node.rules]];
+                    //we can now use the style
+                    CSSSelectorTree *tree = [node.nodes objectAtIndex:0];
+                    if (tree.rules) {
+                        [dict addEntriesFromDictionary:tree.rules];
+                    }
                 }
                 
-                
-            } else {
-                // apply the actual styles
             }
             
         }
+    }
+    [self applyProperties:dict];
+    
+    if (doRecurse) {
+        //tell all the children to do the rule merging
+        //also we pass our styles down for inheritance.
+        [self applyStylesToChildren:treeNode withInheirtedStyleDict:dict recurse:YES];
     }
     
 }
@@ -67,11 +82,14 @@
 
 
 #pragma mark Actual application methods
-- (void)apply:(CSSSelectorTree *)rootNode {
-    [self applyStylesToChildren:rootNode withInheirtedStyleDict:[NSDictionary dictionary]];
+//** Applies styles only to this node and doesn't recurse.*/
+- (void)apply:(CSSStyleSheet*)sheet {
+    [self applyStylesToChildren:[sheet root] withInheirtedStyleDict:[NSDictionary dictionary] recurse:NO];
     
 }
-
+- (void)applyAll:(CSSStyleSheet *)sheet {
+    [self applyStylesToChildren:[sheet root] withInheirtedStyleDict:[NSDictionary dictionary] recurse:YES];
+}
 
 
 

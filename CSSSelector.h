@@ -32,7 +32,7 @@
  */
 - (NSArray*)selectorComponents;
 
-/** Checks to see if we partially/fully match the specified selector.*/
+/** Checks to see if we partially/fully match the specified selector. Sort of a fuzzy matcher.*/
 - (BOOL)doesMatchIntoSelector:(CSSSelector*)selector;
 
 /** Convenience method to break long string (with mul sub selectors) into multiple small sub selectors.*/
