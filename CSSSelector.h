@@ -22,6 +22,7 @@
     NSString *main;
 }
 - (id)initWithSelector:(NSString*)selector;
+
 /** Returns the components of the the selector (including the slug).
  The components which are separated by spaces (mainly descendant selectors).
  */
