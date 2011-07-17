@@ -12,8 +12,7 @@
 @end
 
 @implementation CSSSelector
-@synthesize main, slug;
-@dynamic score;
+@dynamic score, main, slug;
 
 - (id)initWithSelector:(NSString *)selector {
     self = [super init];
@@ -44,12 +43,18 @@
     // just split on spaces..
     return [[self description] componentsSeparatedByString:@" "];
 }
-
+- (BOOL)doesMatch:(CSSSelector *)selector {
+    //TODO checks for id match, class type match, classes mawtch
+}
 - (NSString*)description {
-    return [NSString stringWithFormat:@"%@%@", main, slug];
+    return [NSString stringWithFormat:@"%@%@", self.levels, self.slug];
 }
 
-/** calculates precedence score based on number of classes, ids, etc.*/
+/** calculates precedence score based on number of classes, ids, etc.
+ The score is based on the following:
+ ID are always worth 100
+ Class are always worth 10
+ HTML tags (class type tags) are always worth 1*/
 - (NSInteger)score {
     
 }

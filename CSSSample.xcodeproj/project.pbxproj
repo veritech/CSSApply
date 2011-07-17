@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D7B93D313D28E1B00F4AA31 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
+		1D91E74313D29E33009C11F8 /* CSSSelectorTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91E74213D29E33009C11F8 /* CSSSelectorTree.m */; };
 		1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC908113D262A8005BCF07 /* CSSSelector.m */; };
 		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
@@ -38,10 +39,11 @@
 		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 		D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 		D9C9DBA213D28BE000F34B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */; };
-		D9C9DBAA13D2936600F34B83 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D91E74113D29E33009C11F8 /* CSSSelectorTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSSelectorTree.h; sourceTree = "<group>"; };
+		1D91E74213D29E33009C11F8 /* CSSSelectorTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSSelectorTree.m; sourceTree = "<group>"; };
 		1DEC908013D262A8005BCF07 /* CSSSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSSelector.h; sourceTree = "<group>"; };
 		1DEC908113D262A8005BCF07 /* CSSSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSSelector.m; sourceTree = "<group>"; };
 		1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSResourceManager.h; sourceTree = "<group>"; };
@@ -91,8 +93,6 @@
 		D9141F5F13D26AAB006B25E0 /* CSSTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTokens.h; sourceTree = "<group>"; };
 		D9C27FF213D24CA3000B1A43 /* testcase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = testcase.css; sourceTree = SOURCE_ROOT; };
 		D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D9C9DBA813D2936600F34B83 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
-		D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +121,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D91E74413D29F1F009C11F8 /* Selector Tree */ = {
+			isa = PBXGroup;
+			children = (
+				1D91E74113D29E33009C11F8 /* CSSSelectorTree.h */,
+				1D91E74213D29E33009C11F8 /* CSSSelectorTree.m */,
+			);
+			name = "Selector Tree";
+			sourceTree = "<group>";
+		};
 		1DEE03C513D234A4007C87FE /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				1D91E74413D29F1F009C11F8 /* Selector Tree */,
 				1DF02A9E13D285D3005A3D0C /* Lex */,
 				1DEE03D013D23514007C87FE /* CSSParser.h */,
 				1DEE03D113D23514007C87FE /* CSSParser.m */,
@@ -259,8 +269,6 @@
 		AB50CFC313D2202C001113D0 /* vendors */ = {
 			isa = PBXGroup;
 			children = (
-				D9C9DBA813D2936600F34B83 /* OrderedDictionary.h */,
-				D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */,
 			);
 			name = vendors;
 			sourceTree = "<group>";
@@ -402,7 +410,7 @@
 				AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */,
 				AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */,
 				1D7B93D313D28E1B00F4AA31 /* UIView+CSS.m in Sources */,
-				D9C9DBAA13D2936600F34B83 /* OrderedDictionary.m in Sources */,
+				1D91E74313D29E33009C11F8 /* CSSSelectorTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

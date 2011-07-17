@@ -27,17 +27,22 @@
  For example, a selector could be red.green and you have the classes "red", "green", and "blue" so the original selector would still match you.
  
  .red#hello -> ul
+ 
+ In order to do this, we basically run all permutations of the classes, id, tag name that we *know* about ourselves and then attempt to find 
  */
 #import <Foundation/Foundation.h>
 
 
 @class CSSParser;
 @class CSSSelector;
+@class CSSSelectorTree;
 @interface CSSStyleSheet : NSObject {
     // main css style tree. Custom format.
     NSMutableDictionary *mainTree;
     
     CSSParser *parser;
+    
+    CSSSelectorTree *_root;
 }
 - (NSDictionary*)lookup:(CSSSelector*)selector;
 
@@ -46,4 +51,6 @@
 
 + (CSSStyleSheet*)styleSheetFromURL:(NSURL*)url;
 + (CSSStyleSheet*)styleSheetFromString:(NSString*)css_code;
+
+@property (nonatomic, readonly) CSSSelectorTree *root;
 @end

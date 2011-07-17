@@ -11,9 +11,6 @@
 @class CSSStyleSheet;
 @interface UIView (CSS)
 
--(void) addClassName:(NSString*) aName;
--(void) removeClassName:(NSString*) aName;
-
 - (void)applyAll:(CSSStyleSheet*)sheet;
 - (void)apply:(CSSStyleSheet*)sheet;
 
@@ -23,6 +20,4 @@
 
 -(id) CSSParent;
 
-@property (nonatomic,copy) NSString *cssID;
-@property (nonatomic,copy) NSSet *classNames;
 @end

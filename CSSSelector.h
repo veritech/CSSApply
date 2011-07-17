@@ -6,30 +6,30 @@
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 /**
- This class represents a css selector. Each selector is a bit like a uri with the ending element called
- a "slug". For example, in the css selector "ul.red#hello" "#hello" would be the slug.
- 
- You can get the entire selector by calling "description" on this.
- 
- This is a simple wrapper class which allows us to manage selectors.*/
+ This class represents a CSS selector and all of it's components. It represents an entire selector but usually only the last
+ part or "slug" is used. For example, in "ul ul li div.red#sam" the "div.red#sam" would be used the most. Why? The CSSSelectorTree
+ is the one who handles descendants.*/
 #import <Foundation/Foundation.h>
 
 
 @interface CSSSelector : NSObject {
-    // the ending component
-    NSString *slug;
-    // the main selector (without slug)
-    NSString *main;
+    NSString *selector;
 }
-- (id)initWithSelector:(NSString*)selector;
 
 /** Returns the components of the the selector (including the slug).
- The components which are separated by spaces (mainly descendant selectors).
+ * The components which are separated by spaces (mainly descendant selectors).
  */
 - (NSArray*)selectorComponents;
+/** Checks to see if we partially match the specified selector.*/
+- (BOOL)doesMatch:(CSSSelector*)selector;
 
-//not the best idea to update these directly.
-@property (nonatomic, retain) NSString *main;
-@property (nonatomic, retain) NSString *slug; 
-@property (readonly) NSinteger score;
+/** The part of the selector minus the slug. The "parents" or other "levels".*/
+@property (nonatomic, readonly) NSString *levels;
+/** The classes which are applied to use.*/
+@property (nonatomic, readonly) NSArray *classes;
+/** The last component of the selector.*/
+@property (nonatomic, readonly) NSString *slug; 
+@property (nonatomic, readonly) NSString *cssID;
+//@property (nonatomic, readonly) NSString *
+@property (readonly) NSInteger score;
 @end
