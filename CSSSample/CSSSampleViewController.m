@@ -33,7 +33,7 @@
 {
 	[super viewDidLoad];
 	
-	[[self sampleView] setStyle:@"*{background-color:}"];
+	//[[self sampleView] setStyle:@"*{background-color:}"];
 }
 
 

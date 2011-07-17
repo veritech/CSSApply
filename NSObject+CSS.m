@@ -50,7 +50,7 @@ static const char* kUIViewCSSSelectorKey = "UIViewCSSSelectorKey";
  *	@return an id name
  */
 -(NSString*) idName{
-	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
+	return (NSString*) objc_getAssociatedObject(self, kUIViewIDNameKey);
 }
 
 

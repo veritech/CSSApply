@@ -31,11 +31,10 @@
  In order to do this, we basically run all permutations of the classes, id, tag name that we *know* about ourselves and then attempt to find 
  */
 #import <Foundation/Foundation.h>
+#import "CSSParser.h"
+#import "CSSSelector.h"
+#import "CSSSelectorTree.h"
 
-
-@class CSSParser;
-@class CSSSelector;
-@class CSSSelectorTree;
 @interface CSSStyleSheet : NSObject {
     // main css style tree. Custom format.
     NSMutableDictionary *mainTree;

@@ -14,8 +14,8 @@
     
 }
 
-- (void)apply:(CCSelectorTree *)treeNode {
-    treeNode.selector
+- (void)apply:(CSSSelectorTree *)treeNode {
+    //treeNode.selector
 }
 
 #pragma mark Searching though the "DOM"
