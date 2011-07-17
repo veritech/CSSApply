@@ -58,6 +58,11 @@ static const char *CssID = "CSSClassIDName_____";
 - (void)applyAll:(CSSStyleSheet *)sheet {
     
 }
+
+- (void)apply:(CSSStyleSheet *)sheet {
+    
+}
+
 #pragma mark Searching though the "DOM"
 /** Searches through the "DOM" for a specific set of subviews specified
  by the selector.*/

@@ -26,6 +26,7 @@
     [sheet loadFromURL:url];
     return sheet;
 }
+
 + (CSSStyleSheet*)styleSheetFromString:(NSString *)css_code {
     //TODO: load and parse from string
 }
