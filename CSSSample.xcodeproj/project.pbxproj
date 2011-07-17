@@ -12,7 +12,6 @@
 		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
 		1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */; };
-		1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */; };
 		1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */; };
 		AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ECAE013D25A9F00E151DF /* CALayer+CSS.m */; };
 		AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ECAE413D25B0A00E151DF /* NSObject+CSS.m */; };
@@ -38,6 +37,8 @@
 		D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */ = {isa = PBXBuildFile; fileRef = D9141F5B13D26A4A006B25E0 /* mcss.grammer */; };
 		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 		D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
+		D9C9DBA213D28BE000F34B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */; };
+		D9C9DBAA13D2936600F34B83 /* OrderedDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +51,6 @@
 		1DEE03D413D23591007C87FE /* CSSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapper.h; sourceTree = "<group>"; };
 		1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPlistMapper.h; sourceTree = "<group>"; };
 		1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPlistMapper.m; sourceTree = "<group>"; };
-		1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSDOMManager.m; sourceTree = "<group>"; };
 		1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheet.h; sourceTree = "<group>"; };
 		1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheet.m; sourceTree = "<group>"; };
 		AB0ECADF13D25A9F00E151DF /* CALayer+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+CSS.h"; sourceTree = "<group>"; };
@@ -90,6 +90,9 @@
 		D9141F5B13D26A4A006B25E0 /* mcss.grammer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcss.grammer; path = lex/mcss.grammer; sourceTree = "<group>"; };
 		D9141F5F13D26AAB006B25E0 /* CSSTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTokens.h; sourceTree = "<group>"; };
 		D9C27FF213D24CA3000B1A43 /* testcase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = testcase.css; sourceTree = SOURCE_ROOT; };
+		D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9C9DBA813D2936600F34B83 /* OrderedDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedDictionary.h; sourceTree = "<group>"; };
+		D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedDictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9C9DBA213D28BE000F34B83 /* QuartzCore.framework in Frameworks */,
 				AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */,
 				AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */,
 				AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */,
@@ -193,6 +197,7 @@
 		AB50CF8713D22017001113D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */,
 				AB588F9713D2412500EC6441 /* GHUnitIOS.framework */,
 				AB50CF8813D22017001113D0 /* UIKit.framework */,
 				AB50CF8A13D22017001113D0 /* Foundation.framework */,
@@ -254,6 +259,8 @@
 		AB50CFC313D2202C001113D0 /* vendors */ = {
 			isa = PBXGroup;
 			children = (
+				D9C9DBA813D2936600F34B83 /* OrderedDictionary.h */,
+				D9C9DBA913D2936600F34B83 /* OrderedDictionary.m */,
 			);
 			name = vendors;
 			sourceTree = "<group>";
@@ -392,10 +399,10 @@
 				1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */,
 				1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */,
 				D9141F5C13D26A4A006B25E0 /* css.m in Sources */,
-				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
 				AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */,
 				AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */,
 				1D7B93D313D28E1B00F4AA31 /* UIView+CSS.m in Sources */,
+				D9C9DBAA13D2936600F34B83 /* OrderedDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +464,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -471,7 +478,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -493,6 +500,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
 				INFOPLIST_FILE = "CSSSample/CSSSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -510,6 +518,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSSSample/CSSSample-Prefix.pch";
 				INFOPLIST_FILE = "CSSSample/CSSSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
