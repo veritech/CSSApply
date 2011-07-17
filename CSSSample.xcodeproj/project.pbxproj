@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1DEC907E13D24BE7005BCF07 /* CSSRuleset.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */; };
+		1D7B93D313D28E1B00F4AA31 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
 		1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC908113D262A8005BCF07 /* CSSSelector.m */; };
 		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
@@ -33,9 +33,7 @@
 		AB588FD013D2441600EC6441 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB588F9713D2412500EC6441 /* GHUnitIOS.framework */; };
 		AB588FD113D2442600EC6441 /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588F9B13D2427100EC6441 /* GHUnitIOSTestMain.m */; };
 		AB588FD513D245A700EC6441 /* CSSObjectCategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588FD413D245A700EC6441 /* CSSObjectCategoryTest.m */; };
-		AB588FD613D24AC300EC6441 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
 		AB588FD913D24DB500EC6441 /* CSSViewSelectorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AB588FD813D24DB500EC6441 /* CSSViewSelectorTest.m */; };
-		AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
 		D9141F5C13D26A4A006B25E0 /* css.m in Sources */ = {isa = PBXBuildFile; fileRef = D9141F5A13D26A4A006B25E0 /* css.m */; };
 		D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */ = {isa = PBXBuildFile; fileRef = D9141F5B13D26A4A006B25E0 /* mcss.grammer */; };
 		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
@@ -43,8 +41,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1DEC907C13D24BE7005BCF07 /* CSSRuleset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRuleset.h; sourceTree = "<group>"; };
-		1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSRuleset.m; sourceTree = "<group>"; };
 		1DEC908013D262A8005BCF07 /* CSSSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSSelector.h; sourceTree = "<group>"; };
 		1DEC908113D262A8005BCF07 /* CSSSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSSelector.m; sourceTree = "<group>"; };
 		1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSResourceManager.h; sourceTree = "<group>"; };
@@ -129,8 +125,6 @@
 				1DEE03D113D23514007C87FE /* CSSParser.m */,
 				1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */,
 				1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */,
-				1DEC907C13D24BE7005BCF07 /* CSSRuleset.h */,
-				1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */,
 				1DEC908013D262A8005BCF07 /* CSSSelector.h */,
 				1DEC908113D262A8005BCF07 /* CSSSelector.m */,
 			);
@@ -392,17 +386,16 @@
 				AB50CF9613D22017001113D0 /* main.m in Sources */,
 				AB50CF9913D22017001113D0 /* CSSSampleAppDelegate.m in Sources */,
 				AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */,
-				AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */,
 				1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */,
 				1DEE03D213D23514007C87FE /* CSSParser.m in Sources */,
 				1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */,
 				1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */,
-				1DEC907E13D24BE7005BCF07 /* CSSRuleset.m in Sources */,
 				1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */,
 				D9141F5C13D26A4A006B25E0 /* css.m in Sources */,
 				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
 				AB0ECAE113D25A9F00E151DF /* CALayer+CSS.m in Sources */,
 				AB0ECAE513D25B0A00E151DF /* NSObject+CSS.m in Sources */,
+				1D7B93D313D28E1B00F4AA31 /* UIView+CSS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +406,6 @@
 				AB588FC913D243FE00EC6441 /* TestsAppDelegate.m in Sources */,
 				AB588FD113D2442600EC6441 /* GHUnitIOSTestMain.m in Sources */,
 				AB588FD513D245A700EC6441 /* CSSObjectCategoryTest.m in Sources */,
-				AB588FD613D24AC300EC6441 /* UIView+CSS.m in Sources */,
 				AB588FD913D24DB500EC6441 /* CSSViewSelectorTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

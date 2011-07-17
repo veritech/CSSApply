@@ -8,6 +8,7 @@
 
 #import "CSSStyleSheet.h"
 #import "CSSParser.h"
+#import "CSSRuleset.h"
 
 @interface CSSStyleSheet ()
 - (void)buildTree:(NSDictionary*)rules;
@@ -28,6 +29,7 @@
 }
 + (CSSStyleSheet*)styleSheetFromString:(NSString *)css_code {
     //TODO: load and parse from string
+    return nil;
 }
 
 - (void)loadFromURL:(NSURL*)url {
@@ -68,6 +70,7 @@
         NSArray *components = [self parseSelector:selector];
         if ([components count]) {
             
+            CSSRuleset *parsed_ruleset = nil;
             if ([components count] > 1) {
                 //loop through components and insert into sub elements
                 for (NSString *component in components) {
@@ -75,7 +78,7 @@
                 }
             } else {
                 // we create an "All" namespace
-                [element_entry setValue: forKey:@"All"];
+                [element_entry setValue:parsed_ruleset forKey:@"All"];
             }
 
             // remember, we ensure that the selector is reversed. 

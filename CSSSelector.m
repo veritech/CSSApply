@@ -21,7 +21,6 @@
     }
     return self;
 }
-
 /** Breaks into main url and slug.*/
 - (void)breakIntoSlugAndMain:(NSString*)selector {
     // find slug (start at the end of the string and stop when we find control character)
