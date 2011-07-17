@@ -13,13 +13,7 @@
  
  Most specific to least specific. This setup allows us to ensure the correct properties take precendence and generally makes everything simpler.
  
- Thus, each entry (like #hello) has is a dictionary with a a few built in keys. We always have:
- 1. score
- 2. All (is a default ruleset in case we don't have any parent selectors). For example, #hello would have an "All" key.
- "All" is usually a ruleset which is "the most generic" or a base class.
- 3. Any other selectors that are up a level. (for example, we'd have .red)
- 
- This structure continues all the way up the tree.
+ The tree is maintained via the {@link CSSSelectorTree} data structure.
  
  <b>Searching</b>
  ---------
@@ -28,7 +22,7 @@
  
  .red#hello -> ul
  
- In order to do this, we basically run all permutations of the classes, id, tag name that we *know* about ourselves and then attempt to find 
+ The actual "apply" method on the UIView does the comparison but CSSSelectors know how to compare to each other.
  */
 #import <Foundation/Foundation.h>
 #import "CSSParser.h"
@@ -47,6 +41,8 @@
 - (void)loadFromURL:(NSURL*)url;
 - (void)loadFromString:(NSString*)css_code;
 
+
+//convenience methods
 + (CSSStyleSheet*)styleSheetFromURL:(NSURL*)url;
 + (CSSStyleSheet*)styleSheetFromString:(NSString*)css_code;
 

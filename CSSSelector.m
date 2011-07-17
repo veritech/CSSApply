@@ -35,13 +35,23 @@
     return self;
 }
 
-/** Breaks into main url and slug.*/
-- (void)breakIntoSlugAndMain:(NSString*)selector {
-    // find slug (start at the end of the string and stop when we find control character)
-    unichar control_chars[5] = {'.', '#', ' ', '>', ':'};
++ (NSArray*)subSelectorsFromString:(NSString *)main_selector {
+    NSArray *sels = [main_selector componentsSeparatedByString:@" "];
     
-    for (int i = [selector length]; i>=0; i--) {
-        unichar cur_char = [selector characterAtIndex:i];        
+    NSMutableArray *parsed_sels = [NSMutableArray arrayWithCapacity:30];
+    for (NSString *sel in sels) {
+        CSSSelector *parsed_sel = [[CSSSelector alloc] initWithSelectorStr:sel];
+        [parsed_sels addObject:parsed_sel];
+    }
+    return parsed_sels;
+}
+#pragma mark accessor methods
+/** Parses selector string into levels, classes, etc.*/
+- (void)parseSelector {
+    NSArray *levels = [selector componentsSeparatedByString:@" "];
+    
+    if ([levels count]) {
+        NSString *slug = [levels lastObject];
     }
 }
 
@@ -49,24 +59,37 @@
     // just split on spaces..
     return [[self description] componentsSeparatedByString:@" "];
 }
-- (BOOL)doesMatch:(CSSSelector *)selector {
-    NSSet *other_classes = selector.classes;
+
+- (BOOL)doesMatchIntoSelector:(CSSSelector *)other_selector {
+
     
-    // see if any of the classes DON'T match
-    BOOL doesMatch = NO;
-    for (NSString *class in classes) {
-        if ([other_classes containsObject:class])
-            doesMatch = YES;
-        else
-            doesMatch = NO;
+    if (self.classes)
+    {
+        NSSet *other_classes = other_selector.classes;
+        for (NSString *class in self.classes) {
+            if (![other_classes containsObject:class])
+            {
+                return NO;
+            }
+        }
     }
+    
     // see if the class name doens't match
-    doesMatch &= [self.className isEqualToString:selector.className];
+    
+    if (self.className)
+    {
+        if (other_selector.className == nil) return NO;
+        if (![self.className isEqualToString:other_selector.className]) return NO;
+    }
     
     // finally see if the id matches (might not...)
-    doesMatch &= [self.cssID isEqualToString:selector.cssID];
+    if (self.cssID) 
+    {
+        if (other_selector.cssID == nil) return NO;
+        if (![self.cssID isEqualToString:other_selector.cssID]) return NO;
+    }
     
-    return doesMatch;
+    return YES;
 }
 
 - (NSString*)description {
@@ -77,7 +100,10 @@
  The score is based on the following:
  ID are always worth 100
  Class are always worth 10
- HTML tags (class type tags) are always worth 1*/
+ HTML tags (class type tags) are always worth 1.
+ 
+ Since the score is so simple to calculate, we simply re-run everytime and don't
+ cache.*/
 - (NSInteger)score {
     NSInteger score = 0;
     score += (cssID ? 100 : 0);
@@ -90,7 +116,6 @@
 
     [classes release], classes = nil;
     [cssID release], cssID = nil;
-    
     [className release], className = nil;
     [selector release], selector = nil;
     [super dealloc];

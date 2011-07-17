@@ -10,34 +10,54 @@
 
 @implementation UIView (CSS)
 
+
 - (void)computeIntoMutableDictionary:(NSMutableDictionary *)dict withNode:(CSSSelectorTree *)node
 {
     
 }
 
-#pragma mark Actual application methods
-- (void)applyAll:(CSSStyleSheet *)sheet {
+- (void)applyStylesToChildren:(CSSSelectorTree *)treeNode withInheirtedStyleDict:(NSDictionary *)mdict {
     
-}
-
-- (void)apply:(CSSSelectorTree *)treeNode {
-    
-    
-    
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:mdict];
     
     for (CSSSelectorTree *node in treeNode.nodes)
     {
-        BOOL matches = NO;
-        if ([node.selector isMatching:self.CSSSelector])
+        //does the lowest level match me?
+        
+        if ([node.selector doesMatchIntoSelector:self.CSSSelector])
         {
-           
-            matches = YES;
+            if (node.rules)
+            {
+                [dict addEntriesFromDictionary:node.rules];
+            }
+            
+            if (node.nodes)
+            {
+                for (CSSSelectorTree *subnodes in self.nodes)
+                {
+                    //[self applyStylesToChildren:node withInheirtedStyleDict:mdict];
+                }
+                
+            }
+            
         }
     }
     
-    [self computeIntoMutipleDictionary:dict withNode:node];
+    
+    //direct matches
+    
+    
+    
+    //[self computeIntoMutipleDictionary:dict withNode:node];
+    
+}
 
+
+
+#pragma mark Actual application methods
+- (void)apply:(CSSStyleSheet *)sheet {
+    [self applyStylesToChildren:sheet.root withInheirtedStyleDict:[NSDictionary dictionary]];
+    
 }
 
 

@@ -11,9 +11,6 @@
 
 @interface CSSStyleSheet ()
 - (void)buildTree:(NSDictionary*)rules;
-
-
-- (NSArray*)parseSelector:(NSString*)selector;
 @end
 
 @implementation CSSStyleSheet
@@ -48,7 +45,7 @@
 }
 
 #pragma mark Tree Parsing methods
-/** breaks selector into componeonts (class, id, etc)*/
+/** Builds the giant {@link CSSSelectorTree} from Lex parser data.*/
 - (NSArray*)parseSelector:(NSString*)selector {
     // split on spaces only (though more css may be supported in the future)
     return [selector componentsSeparatedByString:@" "];
@@ -56,6 +53,9 @@
 
 - (void)buildTree:(NSDictionary *)rules {
     mainTree = [[NSMutableDictionary dictionaryWithCapacity:30] retain];
+    
+    // create the root node for the selector tree
+    _root = [[CSSSelectorTree alloc] init];
     
     NSArray *selectors = [rules allKeys];
     
@@ -65,13 +65,15 @@
         
         NSDictionary *ruleset = [rules objectForKey:selector];
         
-        NSInteger score = [self calculateScore:selector];
-        [element_entry setValue:[NSNumber numberWithInt:score] forKey:@"score"];
+        //[element_entry setValue:[NSNumber numberWithInt:score] forKey:@"score"];
         
-        NSArray *components = [self parseSelector:selector];
+        CSSSelector *parsed_selector = [[CSSSelector alloc] initWithSelectorStr:selector];
+        CSSSelectorTree *sub_tree = [[CSSSelectorTree alloc] initWithSelector:parsed_selector];
+        
+        //NSArray *components = [self parseSelector:parse];
+        NSArray *components = nil;
         if ([components count]) {
             
-            //CSSRuleset *parsed_ruleset = nil;
             if ([components count] > 1) {
                 //loop through components and insert into sub elements
                 for (NSString *component in components) {
