@@ -8,22 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-
+@class CSSStyleSheet;
 @interface UIView (CSS)
-
-@property (nonatomic,copy) NSString *idName;
-@property (nonatomic,copy) NSSet *classNames;
-//@property (nonatomic,copy) NSString *style;
 
 -(void) addClassName:(NSString*) aName;
 -(void) removeClassName:(NSString*) aName;
 
-//CSS properties
--(void) setStyle:(NSString*) aString;
-
--(void) setStyleWithPath:(NSString*) aFilePath;
-
--(void) setStyleWithURL:(NSURL*) aURL;
+- (void)applyAll:(CSSStyleSheet*)sheet;
+- (void)apply:(CSSStyleSheet*)sheet;
 
 
+- (NSArray*)find:(NSString*)selector;
+- (NSArray*)findAll:(NSString*)selector;
+
+
+@property (nonatomic,copy) NSString *cssID;
+@property (nonatomic,copy) NSSet *classNames;
 @end

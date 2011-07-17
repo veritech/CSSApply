@@ -8,9 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+@class CSSParser;
 
+
+@class CSSParser;
 @interface CSSParser : NSObject {
     
 }
 
+- (NSDictionary*)parseURL:(NSURL*)url;
+
+//make sure this is a week property.
+@property (assign, nonatomic) id <CSSParserDelegate> delegate;
 @end

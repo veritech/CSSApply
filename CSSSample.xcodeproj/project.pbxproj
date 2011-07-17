@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DEC907E13D24BE7005BCF07 /* CSSRuleset.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */; };
+		1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC908113D262A8005BCF07 /* CSSSelector.m */; };
 		1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */; };
-		1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03CE13D23508007C87FE /* CSSTreeManager.m */; };
 		1DEE03D213D23514007C87FE /* CSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D113D23514007C87FE /* CSSParser.m */; };
 		1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */; };
-		1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */; };
+		1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */; };
 		AB50CF8913D22017001113D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8813D22017001113D0 /* UIKit.framework */; };
 		AB50CF8B13D22017001113D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8A13D22017001113D0 /* Foundation.framework */; };
 		AB50CF8D13D22017001113D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB50CF8C13D22017001113D0 /* CoreGraphics.framework */; };
@@ -41,17 +42,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DEC907C13D24BE7005BCF07 /* CSSRuleset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSRuleset.h; sourceTree = "<group>"; };
+		1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSRuleset.m; sourceTree = "<group>"; };
+		1DEC908013D262A8005BCF07 /* CSSSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSSelector.h; sourceTree = "<group>"; };
+		1DEC908113D262A8005BCF07 /* CSSSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSSelector.m; sourceTree = "<group>"; };
 		1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSResourceManager.h; sourceTree = "<group>"; };
 		1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSResourceManager.m; sourceTree = "<group>"; };
-		1DEE03CD13D23508007C87FE /* CSSTreeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTreeManager.h; sourceTree = "<group>"; };
-		1DEE03CE13D23508007C87FE /* CSSTreeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSTreeManager.m; sourceTree = "<group>"; };
 		1DEE03D013D23514007C87FE /* CSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSParser.h; sourceTree = "<group>"; };
 		1DEE03D113D23514007C87FE /* CSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSParser.m; sourceTree = "<group>"; };
 		1DEE03D413D23591007C87FE /* CSSMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSMapper.h; sourceTree = "<group>"; };
 		1DEE03D513D235EA007C87FE /* CSSPlistMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSPlistMapper.h; sourceTree = "<group>"; };
 		1DEE03D613D235EA007C87FE /* CSSPlistMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSPlistMapper.m; sourceTree = "<group>"; };
-		1DEE03D913D238FE007C87FE /* CSSDOMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSDOMManager.h; sourceTree = "<group>"; };
-		1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSDOMManager.m; sourceTree = "<group>"; };
+		1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSStyleSheet.h; sourceTree = "<group>"; };
+		1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSStyleSheet.m; sourceTree = "<group>"; };
 		AB50CF8413D22017001113D0 /* CSSSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSSSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB50CF8813D22017001113D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AB50CF8A13D22017001113D0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +108,12 @@
 			children = (
 				1DEE03D013D23514007C87FE /* CSSParser.h */,
 				1DEE03D113D23514007C87FE /* CSSParser.m */,
+				1DEE03DC13D24349007C87FE /* CSSStyleSheet.h */,
+				1DEE03DD13D24349007C87FE /* CSSStyleSheet.m */,
+				1DEC907C13D24BE7005BCF07 /* CSSRuleset.h */,
+				1DEC907D13D24BE7005BCF07 /* CSSRuleset.m */,
+				1DEC908013D262A8005BCF07 /* CSSSelector.h */,
+				1DEC908113D262A8005BCF07 /* CSSSelector.m */,
 			);
 			name = parser;
 			sourceTree = "<group>";
@@ -116,10 +125,6 @@
 				1DEE03D313D2357C007C87FE /* mapper */,
 				1DEE03CA13D234FD007C87FE /* CSSResourceManager.h */,
 				1DEE03CB13D234FD007C87FE /* CSSResourceManager.m */,
-				1DEE03CD13D23508007C87FE /* CSSTreeManager.h */,
-				1DEE03CE13D23508007C87FE /* CSSTreeManager.m */,
-				1DEE03D913D238FE007C87FE /* CSSDOMManager.h */,
-				1DEE03DA13D238FE007C87FE /* CSSDOMManager.m */,
 			);
 			name = managers;
 			sourceTree = "<group>";
@@ -356,10 +361,11 @@
 				AB50CF9F13D22017001113D0 /* CSSSampleViewController.m in Sources */,
 				AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */,
 				1DEE03CC13D234FD007C87FE /* CSSResourceManager.m in Sources */,
-				1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */,
 				1DEE03D213D23514007C87FE /* CSSParser.m in Sources */,
 				1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */,
-				1DEE03DB13D238FE007C87FE /* CSSDOMManager.m in Sources */,
+				1DEE03DE13D24349007C87FE /* CSSStyleSheet.m in Sources */,
+				1DEC907E13D24BE7005BCF07 /* CSSRuleset.m in Sources */,
+				1DEC908213D262A9005BCF07 /* CSSSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

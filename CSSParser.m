@@ -10,5 +10,9 @@
 
 
 @implementation CSSParser
+@synthesize delegate;
 
+- (void)dealloc {
+    [super dealloc];
+}
 @end

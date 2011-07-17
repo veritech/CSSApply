@@ -11,4 +11,9 @@
 
 @implementation CSSPlistMapper
 
+#pragma mark Required Mapper Methods
+- (NSDictionary*)loadMappings {
+    return [NSDictionary dictionaryWithObjectsAndKeys:@"backgroundImage",
+                                                        @"background-image", nil];
+}
 @end
