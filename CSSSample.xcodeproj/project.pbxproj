@@ -27,6 +27,10 @@
 		AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */ = {isa = PBXBuildFile; fileRef = AB50CFB513D22017001113D0 /* CSSSampleTests.h */; };
 		AB50CFB813D22017001113D0 /* CSSSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB50CFB713D22017001113D0 /* CSSSampleTests.m */; };
 		AB5B475213D2272B00FB2A74 /* UIView+CSS.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5B475113D2272B00FB2A74 /* UIView+CSS.m */; };
+		D9141F5C13D26A4A006B25E0 /* css.m in Sources */ = {isa = PBXBuildFile; fileRef = D9141F5A13D26A4A006B25E0 /* css.m */; };
+		D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */ = {isa = PBXBuildFile; fileRef = D9141F5B13D26A4A006B25E0 /* mcss.grammer */; };
+		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
+		D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,11 @@
 		AB50CFB713D22017001113D0 /* CSSSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSSampleTests.m; sourceTree = "<group>"; };
 		AB5B475013D2272B00FB2A74 /* UIView+CSS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSS.h"; sourceTree = "<group>"; };
 		AB5B475113D2272B00FB2A74 /* UIView+CSS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSS.m"; sourceTree = "<group>"; };
+		D9141F5913D26A4A006B25E0 /* css.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = css.h; path = lex/css.h; sourceTree = "<group>"; };
+		D9141F5A13D26A4A006B25E0 /* css.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = css.m; path = lex/css.m; sourceTree = "<group>"; };
+		D9141F5B13D26A4A006B25E0 /* mcss.grammer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = mcss.grammer; path = lex/mcss.grammer; sourceTree = "<group>"; };
+		D9141F5F13D26AAB006B25E0 /* CSSTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTokens.h; sourceTree = "<group>"; };
+		D9C27FF213D24CA3000B1A43 /* testcase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = testcase.css; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +109,10 @@
 		1DEE03C513D234A4007C87FE /* parser */ = {
 			isa = PBXGroup;
 			children = (
+				D9141F5F13D26AAB006B25E0 /* CSSTokens.h */,
+				D9141F5913D26A4A006B25E0 /* css.h */,
+				D9141F5A13D26A4A006B25E0 /* css.m */,
+				D9141F5B13D26A4A006B25E0 /* mcss.grammer */,
 				1DEE03D013D23514007C87FE /* CSSParser.h */,
 				1DEE03D113D23514007C87FE /* CSSParser.m */,
 			);
@@ -183,6 +196,7 @@
 		AB50CF8F13D22017001113D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D9C27FF213D24CA3000B1A43 /* testcase.css */,
 				AB50CF9013D22017001113D0 /* CSSSample-Info.plist */,
 				AB50CF9113D22017001113D0 /* InfoPlist.strings */,
 				AB50CF9413D22017001113D0 /* CSSSample-Prefix.pch */,
@@ -311,6 +325,8 @@
 				AB50CF9313D22017001113D0 /* InfoPlist.strings in Resources */,
 				AB50CF9C13D22017001113D0 /* MainWindow.xib in Resources */,
 				AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */,
+				D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */,
+				D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +336,7 @@
 			files = (
 				AB50CFB313D22017001113D0 /* InfoPlist.strings in Resources */,
 				AB50CFB613D22017001113D0 /* CSSSampleTests.h in Resources */,
+				D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +371,7 @@
 				1DEE03CF13D23508007C87FE /* CSSTreeManager.m in Sources */,
 				1DEE03D213D23514007C87FE /* CSSParser.m in Sources */,
 				1DEE03D713D235EA007C87FE /* CSSPlistMapper.m in Sources */,
+				D9141F5C13D26A4A006B25E0 /* css.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

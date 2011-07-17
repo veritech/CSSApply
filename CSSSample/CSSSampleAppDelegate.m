@@ -10,6 +10,8 @@
 
 #import "CSSSampleViewController.h"
 
+#import "CSSParser.h"
+
 @implementation CSSSampleAppDelegate
 
 
@@ -21,6 +23,9 @@
 {
 	// Override point for customization after application launch.
 	 
+    CSSParser *parser = [[CSSParser alloc] init];
+    NSLog(@"%@",[parser parseFilename:[[[NSBundle mainBundle] bundlePath]stringByAppendingPathComponent:@"testcase.css"]]);
+   
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
     return YES;
