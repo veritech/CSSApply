@@ -7,21 +7,7 @@
 
 #import "UIView+CSS.h"
 
-static const char *ClassNameKey = "CSSItemClassName___";
-static const char *CssID = "CSSClassIDName_____";
-
 @implementation UIView (CSS)
-
-#pragma mark - ID & Class names
--(void) setClassNames: (NSSet *)aClassName {
-	objc_setAssociatedObject(self, ClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-
--(NSSet*) classNames{
-	return objc_getAssociatedObject(self, ClassNameKey);
-}
-
 #pragma mark Actual application methods
 - (void)applyAll:(CSSStyleSheet *)sheet {
     

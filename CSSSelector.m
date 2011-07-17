@@ -8,35 +8,35 @@
 
 #import "CSSSelector.h"
 @interface CSSSelector ()
-- (void)breakIntoSlugAndMain:(NSString*)selector;
+- (void)parseSelector;
 @end
 
 @implementation CSSSelector
-@dynamic score, main, slug;
-
-- (id)initWithSelector:(NSString *)selector {
+@synthesize cssID, classes, className, selector;
+@dynamic score;
+- (id)initWithSelectorStr:(NSString *)selector_arg {
     self = [super init];
     if (self) {
-        [self breakIntoSlugAndMain:selector];
+        selector = [selector_arg retain];
+        [self parseSelector];
     }
     return self;
 }
-/** Breaks into main url and slug.*/
-- (void)breakIntoSlugAndMain:(NSString*)selector {
-    // find slug (start at the end of the string and stop when we find control character)
-    unichar control_chars[5] = {'.', '#', ' ', '>', ':'};
-    
-    for (int i = [selector length]; i>=0; i--) {
-        unichar cur_char = [selector characterAtIndex:i];
+- (id)initWithSelector:(NSString *)selector_arg {
+    self = [super init];
+    if (self) {
+        selector = [selector_arg retain];
+        [self parseSelector];
+    }
+    return self;
+}
+#pragma mark accessor methods
+
+/** Parses selector string into levels, classes, etc.*/
+- (void)parseSelector {
+    for (int i=0;i<[selector count]; i++) {
+        unichar current_char = [selector characterAtIndex:i];
         
-        for (int j = 0; j<5;i++) {
-            if (cur_char == control_chars[j]) {
-                NSRange range = NSMakeRange(i-1, i+j+1);
-                self.slug = [selector substringWithRange:range];
-                self.main = [selector substringToIndex:i];
-                return;
-            }
-        }
     }
 }
 - (NSArray*)selectorComponents {
@@ -44,10 +44,27 @@
     return [[self description] componentsSeparatedByString:@" "];
 }
 - (BOOL)doesMatch:(CSSSelector *)selector {
-    //TODO checks for id match, class type match, classes mawtch
+    NSArray *other_classes = selector.classes;
+    
+    // see if any of the classes DON'T match
+    BOOL doesMatch = NO;
+    for (NSString *class in classes) {
+        if ([other_classes containsObject:class])
+            doesMatch = YES;
+        else
+            doesMatch = NO;
+    }
+    // see if the class name doens't match
+    doesMatch &= [self.className isEqualToString:selector.className];
+    
+    // finally see if the id matches (might not...)
+    doesMatch &= [self.cssID isEqualToString:selector.cssID];
+    
+    return doesMatch;
 }
+
 - (NSString*)description {
-    return [NSString stringWithFormat:@"%@%@", self.levels, self.slug];
+    return selector;
 }
 
 /** calculates precedence score based on number of classes, ids, etc.
@@ -56,12 +73,19 @@
  Class are always worth 10
  HTML tags (class type tags) are always worth 1*/
 - (NSInteger)score {
-    
+    NSInteger score = 0;
+    score += (cssID ? 100 : 0);
+    score += ([classes count] ? [classes count] * 10 : 0);
+    score += (className ? 1 : 0);
+    return score;
 }
 
 - (void)dealloc {
     [super dealloc];
-    [main release], main = nil;
-    [slug release], slug = nil;
+    [classes release], classes = nil;
+    [cssID release], cssID = nil;
+    
+    [className release], className = nil;
+    [selector release], selector = nil;
 }
 @end

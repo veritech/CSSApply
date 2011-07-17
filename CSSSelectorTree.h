@@ -26,11 +26,13 @@
  according to their selectors. Each level is caused by a space in a css selector (which represents a descendant relationship)
  at each level we have a CSSSelector which contains a variety of properties (like classes, id, tag type) and a list of child
  nodes.
+
  */
 #import <Foundation/Foundation.h>
 
 @class CSSSelector;
 @interface CSSSelectorTree : NSObject {
+    //array of CSSSelectors
     NSArray *nodes;
     
     CSSSelector *selector;

@@ -9,8 +9,8 @@
 #import "NSObject+CSS.h"
 #import <objc/runtime.h>
 
-#define kUIViewIDNameKey "UIViewCSSIDNameKey" 
-#define kUIViewClassNameKey "UIViewCSSClassNameKey"
+static const char *ClassNameKey = "CSSItemClassName___";
+static const char *CssID = "CSSClassIDName_____";
 
 @implementation NSObject (CSS)
 
@@ -23,7 +23,7 @@
  *	@param a NSSet
  */
 -(void) setClassNames:(NSSet*) aClassName{
-	objc_setAssociatedObject(self, kUIViewClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+	objc_setAssociatedObject(self, ClassNameKey, aClassName, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 /**
@@ -32,7 +32,7 @@
  *	@return NSSet
  */
 -(NSSet*) classNames{
-	return objc_getAssociatedObject(self, kUIViewClassNameKey);
+	return objc_getAssociatedObject(self, ClassNameKey);
 }
 
 
@@ -41,7 +41,7 @@
  *	@param an id name
  */
 -(void) setIdName:(NSString*) anIDName{
-	objc_setAssociatedObject(self, kUIViewIDNameKey, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
+	objc_setAssociatedObject(self, CssID, anIDName, OBJC_ASSOCIATION_COPY_NONATOMIC );
 }
 
 /**
@@ -49,6 +49,10 @@
  *	@return an id name
  */
 -(NSString*) idName{
-	return (NSString*) objc_getAssociatedObject(self,kUIViewIDNameKey);
+	return (NSString*) objc_getAssociatedObject(self, CssID);
+}
+
+- (id)CSSParent {
+    return nil;
 }
 @end
