@@ -39,6 +39,7 @@
 		D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 		D9C27FF513D24D2C000B1A43 /* testcase.css in Resources */ = {isa = PBXBuildFile; fileRef = D9C27FF213D24CA3000B1A43 /* testcase.css */; };
 		D9C9DBA213D28BE000F34B83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */; };
+		D9F5230B13D36EA6003D378D /* maintest.css in Resources */ = {isa = PBXBuildFile; fileRef = D9F5230A13D36EA6003D378D /* maintest.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		D9141F5F13D26AAB006B25E0 /* CSSTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSTokens.h; sourceTree = "<group>"; };
 		D9C27FF213D24CA3000B1A43 /* testcase.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = testcase.css; sourceTree = SOURCE_ROOT; };
 		D9C9DBA113D28BE000F34B83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9F5230A13D36EA6003D378D /* maintest.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = maintest.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				AB50CF9113D22017001113D0 /* InfoPlist.strings */,
 				AB50CF9413D22017001113D0 /* CSSSample-Prefix.pch */,
 				AB50CF9513D22017001113D0 /* main.m */,
+				D9F5230A13D36EA6003D378D /* maintest.css */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				AB50CFA213D22017001113D0 /* CSSSampleViewController.xib in Resources */,
 				D9C27FF313D24CA3000B1A43 /* testcase.css in Resources */,
 				D9141F5D13D26A4A006B25E0 /* mcss.grammer in Resources */,
+				D9F5230B13D36EA6003D378D /* maintest.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
