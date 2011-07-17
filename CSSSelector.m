@@ -52,6 +52,26 @@
     
     if ([levels count]) {
         NSString *slug = [levels lastObject];
+        
+
+        NSString *class_slug = nil;
+        NSString *id_slug = nil;
+        
+        NSScanner *scanner = [NSScanner scannerWithString:slug];
+        //try to find id tag
+        BOOL foundId = [scanner scanUpToString:@"#" intoString:&class_slug];
+        if (foundId) {
+            [scanner scanString:@"#" intoString:NULL]; // move past string
+            id_slug = [[scanner string] substringFromIndex:[scanner scanLocation]];
+            
+            if(cssID) [cssID release];
+            cssID = [id_slug retain];
+        } else {
+            
+        }
+        
+        // now we parse the classes
+        //NSArray *class_comps = [class_slug
     }
 }
 

@@ -33,10 +33,10 @@
             
             if (node.nodes)
             {
-                for (CSSSelectorTree *subnodes in self.nodes)
+                /*for (CSSSelectorTree *subnodes in self.nodes)
                 {
                     //[self applyStylesToChildren:node withInheirtedStyleDict:mdict];
-                }
+                }*/
                 
             }
             
