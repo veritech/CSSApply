@@ -19,6 +19,7 @@
 @dynamic score;
 @synthesize nodes;
 @synthesize rules;
+@synthesize selector;
 
 #pragma mark Accessors
 /** Takes the biggest child score to ensure we reflect the child nodes accurately.

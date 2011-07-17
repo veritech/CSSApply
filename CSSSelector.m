@@ -24,6 +24,17 @@
     return self;
 }
 
+- (id)initWithClassName:(NSString*)aClassName classNames:(NSSet*)aClassNames classID:(NSString*)aCssID {
+    self = [super init];
+    if (self)
+    {
+        className = [aClassName retain];
+        classes = [aClassNames copy];
+        cssID = [aCssID retain];
+    }
+    return self;
+}
+
 /** Breaks into main url and slug.*/
 - (void)breakIntoSlugAndMain:(NSString*)selector {
     // find slug (start at the end of the string and stop when we find control character)
@@ -39,7 +50,7 @@
     return [[self description] componentsSeparatedByString:@" "];
 }
 - (BOOL)doesMatch:(CSSSelector *)selector {
-    NSArray *other_classes = selector.classes;
+    NSSet *other_classes = selector.classes;
     
     // see if any of the classes DON'T match
     BOOL doesMatch = NO;
@@ -76,11 +87,12 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
+
     [classes release], classes = nil;
     [cssID release], cssID = nil;
     
     [className release], className = nil;
     [selector release], selector = nil;
+    [super dealloc];
 }
 @end

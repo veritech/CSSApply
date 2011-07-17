@@ -20,9 +20,13 @@
     // css class name (like div, ul, li, etc)
     NSString *className;
     // custom classes we defined (.ourclass,.customclass, ect)
-    NSArray *classes;
+    NSSet *classes;
 }
+
 - (id)initWithSelectorStr:(NSString*)selector;
+
+- (id)initWithClassName:(NSString*)aClassName classNames:(NSSet*)aClassNames classID:(NSString*)aCssID;
+
 /** Returns the components of the the selector (including the slug).
  * The components which are separated by spaces (mainly descendant selectors).
  */
@@ -31,7 +35,7 @@
 - (BOOL)doesMatch:(CSSSelector*)selector;
 
 /** The classes which are applied to use.*/
-@property (nonatomic, readonly) NSArray *classes;
+@property (nonatomic, readonly) NSSet *classes;
 @property (nonatomic, readonly) NSString *cssID;
 @property (nonatomic, readonly) NSString *className;
 @property (nonatomic, readonly) NSString *selector;

@@ -29,15 +29,15 @@
 
  */
 #import <Foundation/Foundation.h>
+#import "CSSSelector.h"
 
-@class CSSSelector;
 @interface CSSSelectorTree : NSObject {
     //array of CSSSelectors
     NSArray *nodes;
     NSObject *ruleProps;
     CSSSelector *selector;
 }
-
+@property (readonly, nonatomic) CSSSelector *selector;
 @property (readonly, nonatomic) NSObject *rules;
 @property (readonly, nonatomic) NSArray *nodes;
 @property (readonly, nonatomic) NSInteger score;
