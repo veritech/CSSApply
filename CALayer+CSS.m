@@ -1,16 +1,18 @@
 //
-//  UIVIew+CSS.h
+//  CALayer+CSS.m
 //  CSSSample
 //
 //  Created by Jonathan Dalrymple on 16/07/2011.
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "CALayer+CSS.h"
 
 
-@interface UIView (CSS)
+@implementation CALayer (CSS)
 
--(id) CSSParent;
+-(id) CSSParent{
+	return [self superlayer];
+}
 
 @end

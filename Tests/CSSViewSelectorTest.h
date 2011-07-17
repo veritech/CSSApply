@@ -1,5 +1,5 @@
 //
-//  UIVIew+CSS.h
+//  CSSViewSelectorTest.h
 //  CSSSample
 //
 //  Created by Jonathan Dalrymple on 16/07/2011.
@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface UIView (CSS)
+@interface CSSViewSelectorTest : GHTestCase {
+    UIView	*_testView;
+}
 
--(id) CSSParent;
 
 @end

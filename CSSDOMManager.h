@@ -1,16 +1,16 @@
 //
-//  UIVIew+CSS.h
+//  CSSDOMManager.h
 //  CSSSample
 //
-//  Created by Jonathan Dalrymple on 16/07/2011.
+//  Created by Sam Stewart on 7/16/11.
 //  Copyright 2011 Float:Right Ltd. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 
-@interface UIView (CSS)
-
--(id) CSSParent;
+@interface CSSDOMManager : NSObject {
+    
+}
 
 @end

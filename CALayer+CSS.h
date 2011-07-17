@@ -1,5 +1,5 @@
 //
-//  UIVIew+CSS.h
+//  CALayer+CSS.h
 //  CSSSample
 //
 //  Created by Jonathan Dalrymple on 16/07/2011.
@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
-
-@interface UIView (CSS)
+@interface CALayer (CSS)
 
 -(id) CSSParent;
 
