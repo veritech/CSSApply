@@ -13,7 +13,7 @@
 @interface UIView (CSS)
 
 - (void)applyAll:(CSSStyleSheet*)sheet;
-- (void)apply:(CSSSelectorTree*)sheet;
+- (void)apply:(CSSStyleSheet*)sheet;
 
 - (NSArray*)find:(CSSSelector*)selector;
 - (NSArray*)findAll:(CSSSelector*)selector;
