@@ -106,7 +106,7 @@
 - (NSMutableArray*)nodes {
     
     if (!nodes) {
-        nodes = [[NSMutableDictionary dictionaryWithCapacity:20] retain];
+        nodes = [[NSMutableArray alloc] initWithCapacity:20];
     }
     return nodes;
 }
