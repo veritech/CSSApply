@@ -33,9 +33,14 @@
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-    NSURL *cssURL = [[[NSBundle mainBundle] bundleURL]URLByAppendingPathComponent:@"mainview.css"];
-    CSSStyleSheet *styleSheet = [CSSStyleSheet styleSheetFromURL:cssURL];
-	[self.view apply:styleSheet.root];
+    
+	NSURL *cssURL;
+	
+	cssURL = [[NSBundle mainBundle] URLForResource:@"maintest"
+									 withExtension:@"css"
+			  ];
+
+	[[self view] apply:[CSSStyleSheet styleSheetFromURL:cssURL]];
     
 }
 
