@@ -23,8 +23,8 @@
 {
 	// Override point for customization after application launch.
 	 
-    CSSParser *parser = [[CSSParser alloc] init];
-    NSLog(@"%@",[parser parseFilename:[[[NSBundle mainBundle] bundlePath]stringByAppendingPathComponent:@"testcase.css"]]);
+    //CSSParser *parser = [[CSSParser alloc] init];
+    //NSLog(@"%@",[parser parseFilename:[[[NSBundle mainBundle] bundlePath]stringByAppendingPathComponent:@"testcase.css"]]);
    
 	self.window.rootViewController = self.viewController;
 	[self.window makeKeyAndVisible];
