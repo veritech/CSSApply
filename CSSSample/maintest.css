@@ -1,7 +1,7 @@
-#mainView {
+#container{
     backgroundColor: #333333;
 }
 
-#middleLabel {
+UILabel{
     backgroundColor: #ff00ff;
 }
