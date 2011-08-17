@@ -7,6 +7,7 @@
 //
 
 #import "CSSViewSelectorTest.h"
+#import "NSObject+CSS.h"
 #import "UIView+CSS.h"
 
 @implementation CSSViewSelectorTest
@@ -26,7 +27,7 @@
 
 		UIView *child = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 200.0f, 200.f)];
 		
-		[child setCSSIdName:obj];
+		[child setCSSID:obj];
 		
 		[_testView addSubview:child];
 		
@@ -55,7 +56,7 @@
 	NSSet	*results;
 	int		count = 0;
 	
-	[_testView setCSSStyle:@"*{background-color:black}"];
+	[_testView apply:[CSSStyleSheet styleSheetFromString:@"*{background-color:black}"]];
 	
 	results = [[_testView subviews] valueForKeyPath:@"backgroundColor"];
 	
